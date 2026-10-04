@@ -6,6 +6,7 @@
 
 :root {
     --bg: #020b16;
+    --card: #071a2d;
     --linha: rgba(72, 154, 255, .22);
     --cor-fonte-1: #f5f8fc;
     --cor-fonte-2: #1687ff;
@@ -143,13 +144,16 @@ h2 {
 
 .sobre,
 .tecnologias,
-.equipe {
+.equipe,
+.localizacao {
     border-top: 1px solid var(--linha);
 }
 
 .hero p,
 .copia-container p,
-.intro-tec p {
+.intro-tec p,
+.localizacao p
+ {
     max-width: 540px;
     color: var(--cor-fonte-cronometro);
     font-size: 16px;
@@ -545,4 +549,76 @@ h1 {
 .link-card:focus-visible {
     outline: 2px solid var(--cor-fonte-3);
     outline-offset: 3px;
+}
+
+/* Sessão Localização */
+
+.localizacao {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.card-endereco {
+    max-width: 470px;
+    margin-top: 30px;
+    padding: 24px;
+    display: grid;
+    gap: 5px;
+    border: 1px solid var(--linha);
+    border-radius: 14px;
+    background: var(--card);
+}
+
+.card-endereco strong {
+    font-size: 18px;
+}
+
+.card-endereco a {
+    width: fit-content;
+    margin-top: 12px;
+    color: var(--cor-fonte-3);
+    font-weight: 700;
+}
+
+.posicao-no-mapa {
+    min-height: 360px;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    gap: 10px;
+    border: 1px solid var(--linha);
+    border-radius: 18px;
+    background:
+        linear-gradient(rgba(2, 11, 22, .2), rgba(2, 11, 22, .45)),
+        repeating-linear-gradient(30deg, transparent 0 55px, rgba(100, 170, 230, .08) 56px 58px),
+        repeating-linear-gradient(-30deg, transparent 0 75px, rgba(100, 170, 230, .07) 76px 78px),
+        #0a2034;
+}
+
+.marcador-mapa {
+    width: 65px;
+    height: 65px;
+    display: grid;
+    place-items: center;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    background: var(--cor-fonte-2);
+    box-shadow: 0 0 35px rgba(22, 135, 255, .5);
+    color: #fff;
+    font-size: 25px;
+}
+
+.posicao-no-mapa > span,
+.posicao-no-mapa > small {
+    color: #dce8f4;
+}
+
+.posicao-no-mapa > span {
+    font-weight: 800;
+}
+
+.posicao-no-mapa > small {
+    color: var(--cor-fonte-cronometro);
 }
