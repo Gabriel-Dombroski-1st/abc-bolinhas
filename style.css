@@ -159,6 +159,46 @@ h2 {
     font-size: 16px;
 }
 
+/* Efeitos de Entrada Sessão */
+
+.js .emerge-da-esquerda,
+.js .emerge-da-direita,
+.js .emerge-de-baixo {
+    opacity: 0;
+    transition: opacity .6s ease, transform .6s ease;
+    will-change: opacity, transform;
+}
+
+.js .emerge-da-esquerda { transform: translateX(-100px); }
+.js .emerge-da-direita { transform: translateX(100px); }
+.js .emerge-de-baixo    { transform: translateY(100px); }
+
+.js .emerge-da-esquerda.ativo,
+.js .emerge-da-direita.ativo,
+.js .emerge-de-baixo.ativo {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.js .emerge-da-esquerda::before,
+.js .emerge-da-direita::before,
+.js .emerge-de-baixo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity .6s ease;
+}
+
+.js .emerge-da-esquerda.ativo::before,
+.js .emerge-da-direita.ativo::before,
+.js .emerge-de-baixo.ativo::before {
+    opacity: 0;
+}
+
+
 /* Sessão Início */
 
 .hero {
@@ -643,3 +683,4 @@ footer a {
     font-weight: 700;
     font-size: 13px;
 }
+
