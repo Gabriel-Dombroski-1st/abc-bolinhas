@@ -50,3 +50,42 @@ const observadorNav = new IntersectionObserver(entradas => {
 }, { threshold: 0.35 });
 
 sessoes.forEach(sessao => observadorNav.observe(sessao));
+
+/* Correção Rolagem das Âncoras */
+
+const navbarHeight = 76;
+
+/* Destaque do menu conforme a rolagem */
+
+function atualizarMenu() {
+    const linhaDeReferencia = window.scrollY + navbarHeight + 40;
+    let idAtual = sessoes[0].id;
+
+    sessoes.forEach((sessao) => {
+        if (sessao.offsetTop <= linhaDeReferencia) idAtual = sessao.id;
+    });
+
+    // no fim da página, a última seção pode não alcançar a linha de referência
+    const chegouAoFim = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+    if (chegouAoFim) idAtual = sessoes[sessoes.length - 1].id;
+
+    linkNav.forEach((link) => {
+        link.classList.toggle("ativo", link.getAttribute("href") === `#${idAtual}`);
+    });
+}
+
+window.addEventListener("scroll", atualizarMenu, { passive: true });
+window.addEventListener("resize", atualizarMenu);
+atualizarMenu();
+
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", (event) => {
+        const id = link.getAttribute("href");
+        const target = id.length > 1 ? document.querySelector(id) : null;
+        if (!target) return;
+
+        event.preventDefault();
+        const top = id === "#inicio" ? 0 : target.offsetTop - navbarHeight + 1;
+        window.scrollTo({ top, behavior: "smooth" });
+    });
+});
