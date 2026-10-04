@@ -141,6 +141,11 @@ h2 {
     letter-spacing: -2px;
 }
 
+.sobre
+.copia-container p {
+    border-top: 1px solid var(--linha);
+}
+
 .hero p {
     max-width: 540px;
     color: var(--cor-fonte-cronometro);
@@ -264,4 +269,59 @@ h1 {
     height: 65px;
     left: 13px;
     top: 77px;
+}
+
+/* Sessão Projeto */
+
+.sobre {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+    background: radial-gradient(circle at 70% 30%, rgba(14, 106, 200, .08), transparent 35%);
+}
+
+.titulo-cronometro {
+    margin-bottom: 22px;
+    color: var(--cor-fonte-3);
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: 700;
+}
+
+.cronometro {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.cronometro div {
+    min-height: 105px;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    border: 1px solid var(--cor-fonte-2);
+    border-radius: 13px;
+    background: rgba(4, 22, 40, .6);
+}
+
+.cronometro strong {
+    font-size: 42px;
+    line-height: 1;
+}
+
+.cronometro small {
+    margin-top: 7px;
+    color: var(--cor-fonte-cronometro);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.mensagem-cronometro {
+    margin-top: 28px;
+    color: var(--cor-fonte-cursiva);
+    font-family: "Pacifico", cursive;
+    font-size: 22px;
+    text-align: right;
+    transform: rotate(-2deg);
 }
