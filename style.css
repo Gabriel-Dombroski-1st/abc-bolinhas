@@ -622,3 +622,24 @@ h1 {
 .posicao-no-mapa > small {
     color: var(--cor-fonte-cronometro);
 }
+
+/* Footer */
+
+footer {
+    border-top: 1px solid var(--linha);
+}
+
+footer strong {
+    color: var(--cor-fonte-2);
+}
+
+footer p {
+    color: var(--cor-fonte-cronometro);
+    font-size: 12px;
+}
+
+footer a {
+    color: var(--cor-fonte-3);
+    font-weight: 700;
+    font-size: 13px;
+}
