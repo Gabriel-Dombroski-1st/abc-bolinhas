@@ -141,12 +141,14 @@ h2 {
     letter-spacing: -2px;
 }
 
-.sobre
-.copia-container p {
+.sobre,
+.tecnologias {
     border-top: 1px solid var(--linha);
 }
 
-.hero p {
+.hero p,
+.copia-container p,
+.intro-tec p {
     max-width: 540px;
     color: var(--cor-fonte-cronometro);
     font-size: 16px;
@@ -325,3 +327,63 @@ h1 {
     text-align: right;
     transform: rotate(-2deg);
 }
+
+/* Tecnologias */
+
+.tecnologias {
+    display: grid;
+    grid-template-columns: .8fr 1.5fr;
+    gap: 70px;
+    align-items: center;
+    background: linear-gradient(110deg, #020b16, #06192c);
+}
+
+.grid-tec {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.card-tec {
+    padding: 24px 15px;
+    text-align: center;
+    border: 1px solid var(--linha);
+    border-radius: 13px;
+    background: rgba(7, 26, 45, .72);
+    transition: .2s;
+}
+
+.card-tec h3 {
+    font-size: 14px;
+}
+
+.card-tec p {
+    margin-top: 4px;
+    color: var(--cor-fonte-cronometro);
+    font-size: 11px;
+}
+
+.card-tec:hover {
+    transform: translateY(-4px);
+    border-color: rgba(22, 135, 255, .7);
+}
+
+.logo-tec {
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 14px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: #0c2d4f;
+    color: #fff;
+    font-weight: 800;
+    font-size: 25px;
+}
+
+.logo-tec.html { color: #ff7040; }
+.logo-tec.css { color: #54a8ff; }
+.logo-tec.js { color: #ffd23f; font-size: 17px; }
+.logo-tec.git { color: #ff7040; }
+.logo-tec.github { color: #fff; }
+.logo-tec.vscode { color: #36a8ff; font-size: 18px; }
