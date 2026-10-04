@@ -684,3 +684,92 @@ footer a {
     font-size: 13px;
 }
 
+/* Responsividade */
+
+@media (prefers-reduced-motion: reduce) {
+
+    /* Efeito Surgimento das Sessões */
+
+    .js .emerge-da-esquerda,
+    .js .emerge-da-direita,
+    .js .emerge-de-baixo {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+    .js .emerge-da-esquerda::before,
+    .js .emerge-da-direita::before,
+    .js .emerge-de-baixo::before {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+
+    /* Navegação */
+    nav { gap: 13px; }
+    nav a { font-size: 11px; }
+
+    /* Conteúdo das Sessões */
+    .hero,
+    .sobre,
+    .tecnologias,
+    .localizacao {
+        grid-template-columns: 1fr;
+    }
+
+
+    .hero { text-align: center; }
+    .conteudo-hero { margin: auto; }
+    .hero p { margin: auto; }
+    .arte-hero { min-height: 300px; }
+    .sobre,
+    .tecnologias,
+    .localizacao { gap: 45px; }
+    .carrossel {
+        grid-template-columns: 45px 1fr 45px;
+    }
+
+    /* Carrossel Sessão Equipe */
+    .membro-vizinho { display: none; }
+    .membro-central { grid-column: 2; }
+    .botao-carrossel.anterior { grid-column: 1; grid-row: 1; }
+    .botao-carrossel.proximo { grid-column: 3; grid-row: 1; }
+}
+
+@media (max-width: 600px) {
+
+    /* Navegação */
+    .navbar {
+        padding: 0 18px;
+    }
+    .logo { font-size: 17px; }
+    .logo img { width: 32px; height: 32px; }
+    nav { display: none; }
+    .container {
+        padding: 75px 22px;
+    }
+
+    /* Sessão Inicial */
+    h1 { font-size: 47px; }
+
+    /* Cronometro Sessão Sobre Nós */
+    .cronometro { gap: 7px; }
+    .cronometro div { min-height: 85px; }
+    .cronometro strong { font-size: 28px; }
+    .mensagem-cronometro { font-size: 17px; }
+
+    /* Sessão Tecnologias */
+    .grid-tec { grid-template-columns: repeat(2, 1fr); }
+
+    /* Sessão Equipe */
+    .carrossel {
+        grid-template-columns: 40px 1fr 40px;
+        gap: 8px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 30px 22px;
+    }
+}
