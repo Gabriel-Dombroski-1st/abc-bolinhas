@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC - Bolinhas</title>
+    <link rel="shortcut icon" href="Imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navegacao-principal">
+        <a class="logo" href="#inicio">
+            <img src="Imagens/logo.png" alt="Logo ABC - Bolinhas">
+            <span>ABC <strong>Bolinhas</strong></span>
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#projeto">Projeto</a></li>
+                <li><a href="#tecnologias">Tecnologias</a></li>
+                <li><a href="#equipe">Equipe</a></li>
+                <li><a href="#localizacao">Localização</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio">
+            <div class="conteudo-hero">
+                <span class="sobretitulo">JUNTOS SOMOS MAIS FORTES</span>
+                <h1>
+                    Um projeto, <br><span>11 pessoas.</span>
+                </h1>
+                <p>
+                    Um site desenvolvido em equipe, unindo ideias, conhecimentos
+                    e esforço para transformar nosso objetivo em realidade.
+                </p>
+                <a class="botao-principal" href="#projeto">Saiba mais sobre o projeto<span>↓</span></a>
+            </div>
+
+            <div class="arte-hero">
+                <div class="icon-equipe">
+                    <span></span><span></span><span></span>
+                </div>
+                <div class="escrita-cursiva">
+                    11 ideias, <br>1 só objetivo
+                </div>
+            </div>
+        </section>
+
+        <section id="projeto">
+            <div>
+                <span class="sobretitulo">QUEM SOMOS</span>
+                <h2>Uma equipe unida<br>por um mesmo objetivo</h2>
+                <p>
+                    Somos 11 estudantes, com diferentes habilidades e ideias,
+                    trabalhando juntos para aprender, evoluir e construir algo
+                    que represente nosso trabalho em equipe.
+                </p>
+            </div>
+
+            <div class="bloco-cronometro">
+                <div class="titulo-cronometro">◷ &nbsp; ESTAMOS JUNTOS À:</div>
+                <div id="cronometro">
+                    <div>
+                        <strong id="dias">00</strong>
+                        <small>DIAS</small>
+                    </div>
+                    <div>
+                        <strong id="horas">00</strong>
+                        <small>HORAS</small>
+                    </div>
+                    <div>
+                        <strong id="minutos">00</strong>
+                        <small>MIN</small>
+                    </div>
+                    <div>
+                        <strong id="segundos">00</strong>
+                        <small>SEG</small>
+                    </div>
+                </div>
+                <p>Cada segundo nos aproxima do nosso objetivo.</p>
+            </div>
+        </section>
+
+        <section id="tecnologias">
+            <div class="intro-tec">
+                <span class="sobretitulo">TECNOLOGIAS</span>
+                <h2>Ferramentas que nos <span>conectam.</span></h2>
+                <p>
+                    As ferramentas que estamos utilizando para desenvolver,
+                    organizar e compartilhar o projeto durante o processo.
+                </p>
+            </div>
+
+            <div class="grid-tec">
+                <article class="card-tec">
+                    <div>5</div>
+                    <h3>HTML</h3>
+                    <p>Estrutura do Site</p>
+                </article>
+                <article class="card-tec">
+                    <div>3</div>
+                    <h3>CSS</h3>
+                    <p>Estilização e Layout</p>
+                </article>
+                <article class="card-tec">
+                    <div>JS</div>
+                    <h3>JavaScript</h3>
+                    <p>Interatividade</p>
+                </article>
+                <article class="card-tec">
+                    <div>◆</div>
+                    <h3>Git</h3>
+                    <p>Controle de Versão</p>
+                </article>
+                <article class="card-tec">
+                    <div>●</div>
+                    <h3>GitHub</h3>
+                    <p>Repositório do Projeto</p>
+                </article>
+                <article class="card-tec">
+                    <div>&lt;/&gt;</div>
+                    <h3>VS Code</h3>
+                    <p>Editor de Código</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="equipe">
+            <div class="cabecalho-equipe">
+                <span class="sobretitulo">EQUIPE</span>
+                <h2>11 pessoas, diferentes habilidades, <br> <span>o mesmo propósito.</span></h2>
+            </div>
+
+            <div class="carrossel">
+                <button aria-label="Membro Anterior">
+                    ‹
+                </button>
+                
+                <div class="membro-vizinho" id="membro-a-esquerda"></div>
+                <article class="membro-central" id="membro-central"></article>
+                <div class="membro-vizinho" id="membro-a-direita"></div>
+
+                <button aria-label="Membro Posterior">›</button>
+            </div>
+
+            <div id="navegacao-membros"></div>
+        </section>
+
+        <section id="localizacao">
+            <div>
+                <span class="sobretitulo">ONDE ESTAMOS</span>
+                <h2>Localização</h2>
+                <p>Encontre a nossa faculdade e saiba como chegar</p>
+
+                <div class="card-endereco">
+                    <strong>📍 UNIPLAC</strong>
+                    <span>Universidade do Planalto Catarinense</span>
+                    <span>Lages — Santa Catarina</span>
+                    <a href="https://www.google.com/maps/search/?api=1&query=UNIPLAC+Lages+SC" target="_blank" rel="noopener">
+                        Abrir no Google Maps ↗
+                    </a>
+                </div>
+            </div>
+
+            <div class="posicao-no-mapa">
+                <div class="marcador-mapa">●</div>
+                <span>UNIPLAC</span>
+                <small>Mapa da Localização</small>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <span>Nosso <strong>Projeto</strong></span>
+            <p>11 pessoas • 1 objetivo</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
