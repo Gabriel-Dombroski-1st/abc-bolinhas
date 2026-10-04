@@ -142,7 +142,8 @@ h2 {
 }
 
 .sobre,
-.tecnologias {
+.tecnologias,
+.equipe {
     border-top: 1px solid var(--linha);
 }
 
@@ -387,3 +388,161 @@ h1 {
 .logo-tec.git { color: #ff7040; }
 .logo-tec.github { color: #fff; }
 .logo-tec.vscode { color: #36a8ff; font-size: 18px; }
+
+/* Sessão Equipe */
+
+.equipe {
+    background: radial-gradient(circle at center, rgba(22, 135, 255, .09), transparent 45%);
+}
+
+.cabecalho-equipe {
+    text-align: center;
+}
+
+/* Carrossel Membros */
+
+.carrossel {
+    max-width: 980px;
+    margin: 55px auto 0;
+    display: grid;
+    grid-template-columns: 70px 1fr 340px 1fr 70px;
+    gap: 18px;
+    align-items: center;
+}
+
+.botao-carrossel {
+    width: 46px;
+    height: 46px;
+    border: 1px solid var(--cor-fonte-2);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--cor-fonte-3);
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.navegacao-membros {
+    display: flex;
+    justify-content: center;
+    gap: 9px;
+    margin-top: 25px;
+}
+
+.navegacao-membros button {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #183754;
+    cursor: pointer;
+}
+
+.navegacao-membros button.ativo {
+    background: var(--cor-fonte-2);
+    box-shadow: 0 0 12px rgba(22, 135, 255, .7);
+}
+
+.membro-vizinho {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card-membro {
+    position: relative;
+    transition: transform .2s, border-color .2s;
+    min-height: 180px;
+    display: grid;
+    place-items: center;
+    padding: 18px 10px;
+    text-align: center;
+    border: 1px solid var(--linha);
+    border-radius: 13px;
+    background: rgba(4, 18, 32, .75);
+}
+
+.card-membro img {
+    width: 64px;
+    height: 64px;
+}
+
+.card-membro h3 {
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+.card-membro p {
+    color: var(--cor-fonte-3);
+    font-size: 10px;
+}
+
+.card-membro img,
+.membro-central img {
+    border-radius: 50%;
+    object-fit: cover;
+    background: #0b3155;
+}
+
+.member-card:hover,
+.member-featured:hover {
+    transform: translateY(-4px);
+}
+
+.card-membro:hover { border-color: var(--cor-fonte-2); }
+.membro-central:hover { box-shadow: 0 24px 55px rgba(22, 135, 255, .25); }
+
+
+
+.membro-central {
+    position: relative;
+    transition: transform .2s, box-shadow .2s;
+    min-height: 330px;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    padding: 25px;
+    text-align: center;
+    border: 1px solid var(--cor-fonte-2);
+    border-radius: 18px;
+    background: linear-gradient(160deg, rgba(10, 44, 77, .95), rgba(4, 18, 32, .95));
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .25);
+}
+
+.membro-central img {
+    width: 110px;
+    height: 110px;
+    border: 3px solid var(--cor-fonte-2);
+}
+
+.membro-central h3 {
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.membro-central .cargo {
+    color: var(--cor-fonte-3);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.membro-central p {
+    max-width: 240px;
+    margin-top: 8px;
+    color: var(--cor-fonte-cronometro);
+    font-size: 12px;
+}
+
+/* Link para Perfil do Integrante da Equipe */
+
+.link-card {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    z-index: 1;
+}
+
+.link-card:focus-visible {
+    outline: 2px solid var(--cor-fonte-3);
+    outline-offset: 3px;
+}
