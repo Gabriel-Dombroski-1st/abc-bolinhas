@@ -1,17 +1,17 @@
 /* Membros da Equipe */
 
 const equipe = [
-    { nome: "Thiago Ademar Ludvichak", funcao: "Líder do projeto", descricao: "Responsável por coordenar a equipe e manter tudo no caminho certo.", perfil: "perfis/aluno_A/perfilA.html" },
-    { nome: "Anthony Santa Ana Souza", funcao: "Desenvolvimento", descricao: "Participação no desenvolvimento e construção do site.", perfil: "perfis/aluno_B/perfilB.html" },
-    { nome: "Pedro Elias dos Santos Vincensi", funcao: "Banco de Dados", descricao: "Organização das informações e apoio à estrutura do projeto.", perfil: "perfis/aluno_C/perfilC.html" },
+    { nome: "Thiago Ademar Ludvichak", funcao: "Líder do projeto", descricao: "Responsável por coordenar a equipe e manter tudo no caminho certo.", perfil: "Perfis/aluno_A/perfilA.html" },
+    { nome: "Anthony Santa Ana Souza", funcao: "Desenvolvimento", descricao: "Participação no desenvolvimento e construção do site.", perfil: "Perfis/aluno_B/perfilB.html" },
+    { nome: "Pedro Elias dos Santos Vincensi", funcao: "Banco de Dados", descricao: "Organização das informações e apoio à estrutura do projeto.", perfil: "Perfis/aluno_C/perfilC.html" },
     { nome: "Lucas Santos de Liz", funcao: "Design", descricao: "Criação e organização da identidade visual.", perfil: "perfis/aluno_D/perfilD.html" },
-    { nome: "Gabriel da Rosa Dombroski", funcao: "Desenvolvimento", descricao: "Implementação de funcionalidades e componentes.", perfil: "perfis/aluno_E/perfilE.html" },
-    { nome: "Victor Matheus Albino Freitas", funcao: "Testes", descricao: "Verificação do funcionamento e identificação de melhorias.", perfil: "perfis/aluno_F/perfilF.html" },
-    { nome: "Murilo da Silva Siqueira", funcao: "Documentação", descricao: "Organização da documentação e apresentação do projeto.", perfil: "perfis/aluno_G/perfilG.html" },
-    { nome: "Tamiris de Fátima Pereira Marafigo", funcao: "Desenvolvimento", descricao: "Construção das seções e integração do conteúdo.", perfil: "perfis/aluno_H/perfilH.html" },
-    { nome: "Guilherme Cardoso Antunes", funcao: "Design", descricao: "Apoio visual, organização e experiência do usuário.", perfil: "perfis/aluno_I/perfilI.html" },
-    { nome: "Arthur Stradioto da Silva", funcao: "Git/GitHub", descricao: "Organização do repositório e colaboração da equipe.", perfil: "perfis/aluno_J/perfilJ.html" },
-    { nome: "Maicon Carlos Cristofolini Junior", funcao: "Testes", descricao: "Revisão final, responsividade e ajustes.", perfil: "perfis/aluno_K/perfilK.html" }
+    { nome: "Gabriel da Rosa Dombroski", funcao: "Desenvolvimento", descricao: "Implementação de funcionalidades e componentes.", perfil: "Perfis/GabrielDombroski/perfil.html" },
+    { nome: "Victor Matheus Albino Freitas", funcao: "Testes", descricao: "Verificação do funcionamento e identificação de melhorias.", perfil: "Perfis/aluno_F/perfilF.html" },
+    { nome: "Murilo da Silva Siqueira", funcao: "Documentação", descricao: "Organização da documentação e apresentação do projeto.", perfil: "Perfis/aluno_G/perfilG.html" },
+    { nome: "Tamiris de Fátima Pereira Marafigo", funcao: "Desenvolvimento", descricao: "Construção das seções e integração do conteúdo.", perfil: "Perfis/aluno_H/perfilH.html" },
+    { nome: "Guilherme Cardoso Antunes", funcao: "Design", descricao: "Apoio visual, organização e experiência do usuário.", perfil: "Perfis/aluno_I/perfilI.html" },
+    { nome: "Arthur Stradioto da Silva", funcao: "Git/GitHub", descricao: "Organização do repositório e colaboração da equipe.", perfil: "Perfis/aluno_J/perfilJ.html" },
+    { nome: "Maicon Carlos Cristofolini Junior", funcao: "Testes", descricao: "Revisão final, responsividade e ajustes.", perfil: "Perfis/aluno_K/perfilK.html" }
 ]
 
 let posicaoMembroAtual = 0;
