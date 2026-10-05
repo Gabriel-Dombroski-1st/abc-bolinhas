@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Habilidades</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#160b15;
+  --panel:#211021;
+  --line:#823379;
+  --blue:#ff16dc;
+  --cyan:#fc57c2;
+  --txt:#f8e9ee;
+  --mut:#c9a7b3;
+}
+
+body{
+  margin:0;
+  background:transparent;
+  font-family:Inter,system-ui,sans-serif;
+  color:var(--txt);
+}
+
+.g{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(110px,1fr));
+  gap:12px;
+}
+
+.s{
+  border:1px solid var(--line);
+  background:var(--panel);
+  border-radius:8px;
+  padding:18px 6px;
+  text-align:center;
+  font-size:12px;
+  color:var(--txt);
+  transition:
+    border-color .2s,
+    background .2s,
+    transform .2s;
+}
+
+.s:hover{
+  border-color:var(--blue);
+  background:#2a1229;
+  transform:translateY(-2px);
+}
+
+.s b{
+  display:block;
+  font-size:20px;
+  color:var(--blue);
+  margin-bottom:10px;
+  height:26px;
+}
+</style>
+
+</head>
+
+<body>
+<div class="g">
+  <div class="s">
+    <b>C#</b>
+    C#
+  </div>
+
+  <div class="s">
+    <b>🎲</b>
+    Unity
+  </div>
+
+  <div class="s">
+    <b>🐬</b>
+    MySQL
+  </div>
+
+  <div class="s">
+    <b>C++</b>
+    C++
+  </div>
+
+  <div class="s">
+    <b>🐱</b>
+    GitHub
+  </div>
+
+  <div class="s">
+    <b>⚙️</b>
+    Hardware
+  </div>
+
+  <div class="s">
+    <b>🎧</b>
+    Suporte
+  </div>
+
+  <div class="s">
+    <b>🤖</b>
+    I.A.
+  </div>
+</div>
+</body>
+</html>
