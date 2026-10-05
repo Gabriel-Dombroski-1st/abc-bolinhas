@@ -6,7 +6,7 @@ const equipe = [
     { nome: "Pedro Elias dos Santos Vincensi", funcao: "Banco de Dados", descricao: "Organização das informações e apoio à estrutura do projeto.", perfil: "perfis/aluno_C/perfilC.html" },
     { nome: "Lucas Santos de Liz", funcao: "Design", descricao: "Criação e organização da identidade visual.", perfil: "perfis/aluno_D/perfilD.html" },
     { nome: "Gabriel da Rosa Dombroski", funcao: "Desenvolvimento", descricao: "Implementação de funcionalidades e componentes.", perfil: "perfis/aluno_E/perfilE.html" },
-    { nome: "Victor Matheus Albino Freitas", funcao: "Testes", descricao: "Verificação do funcionamento e identificação de melhorias.", perfil: "perfis/aluno_F/perfilF.html" },
+    { nome: "Victor Matheus Albino Freitas", funcao: "Testes", descricao: "Verificação do funcionamento e identificação de melhorias.", perfil: "perfis/VictorFreitas/perfil.html" },
     { nome: "Murilo da Silva Siqueira", funcao: "Documentação", descricao: "Organização da documentação e apresentação do projeto.", perfil: "perfis/aluno_G/perfilG.html" },
     { nome: "Tamiris de Fátima Pereira Marafigo", funcao: "Desenvolvimento", descricao: "Construção das seções e integração do conteúdo.", perfil: "perfis/aluno_H/perfilH.html" },
     { nome: "Guilherme Cardoso Antunes", funcao: "Design", descricao: "Apoio visual, organização e experiência do usuário.", perfil: "perfis/aluno_I/perfilI.html" },
