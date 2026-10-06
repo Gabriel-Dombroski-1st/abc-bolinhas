@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <title>Contato</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+        <style>
+            :root {
+                --bg: #090611;
+                --cor-auxiliar-1: #6d28d9;
+                --texto: #f3edff;
+                --texto-secundario: #a99abb;
+            }
+
+            /* Configurações gerais */
+
+            * {
+                box-sizing: border-box;
+                margin: 0;
+            }
+
+            body {
+                font-family: Inter, system-ui, sans-serif;
+                color: var(--texto);
+                background: transparent;
+            }
+
+            /* Informações de contato */
+
+            .c {
+                display: flex;
+                gap: 40px;
+                flex-wrap: wrap;
+                align-items: center;
+                font-size: 13px;
+            }
+
+            a {
+                color: inherit;
+                text-decoration: none;
+                transition: color 0.2s;
+            }
+
+            a:hover {
+                color: var(--cor-auxiliar-1);
+            }
+
+            .c span {
+                color: var(--cor-auxiliar-1);
+                margin-right: 8px;
+            }
+
+            /* Frase final */
+
+            p {
+                margin-top: 22px;
+                font-size: 12px;
+                color: var(--texto-secundario);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="c">
+            <div>
+                <span>📞</span>(49) 4002-8922
+            </div>
+
+            <a href="https://instagram.com/abc_bolinhas" target="_blank">
+                <span>◎</span>abc_bolinhas
+            </a>
+
+            <a href="mailto:gabriel.dombroski@hotmail.com" target="_top">
+                <span>✉</span>gabriel.dombroski@hotmail.com
+            </a>
+        </div>
+
+        <p>Tecnologia conecta pessoas, e é isso que me move.</p>
+    </body>
+</html>

@@ -1,26 +1,45 @@
 /* Membros da Equipe */
 
 const equipe = [
-    { nome: "Thiago Ademar Ludvichak", funcao: "Líder do projeto", descricao: "Responsável por coordenar a equipe e manter tudo no caminho certo.", perfil: "perfis/aluno_A/perfilA.html" },
-    { nome: "Anthony Santa Ana Souza", funcao: "Desenvolvimento", descricao: "Participação no desenvolvimento e construção do site.", perfil: "perfis/aluno_B/perfilB.html" },
-    { nome: "Pedro Elias dos Santos Vincensi", funcao: "Banco de Dados", descricao: "Organização das informações e apoio à estrutura do projeto.", perfil: "perfis/aluno_C/perfilC.html" },
-    { nome: "Lucas Santos de Liz", funcao: "Design", descricao: "Criação e organização da identidade visual.", perfil: "perfis/aluno_D/perfilD.html" },
-    { nome: "Gabriel da Rosa Dombroski", funcao: "Desenvolvimento", descricao: "Implementação de funcionalidades e componentes.", perfil: "perfis/aluno_E/perfilE.html" },
-    { nome: "Victor Matheus Albino Freitas", funcao: "Testes", descricao: "Verificação do funcionamento e identificação de melhorias.", perfil: "perfis/VictorFreitas/perfil.html" },
-    { nome: "Murilo da Silva Siqueira", funcao: "Documentação", descricao: "Organização da documentação e apresentação do projeto.", perfil: "perfis/aluno_G/perfilG.html" },
-    { nome: "Tamiris de Fátima Pereira Marafigo", funcao: "Desenvolvimento", descricao: "Construção das seções e integração do conteúdo.", perfil: "perfis/aluno_H/perfilH.html" },
-    { nome: "Guilherme Cardoso Antunes", funcao: "Design", descricao: "Apoio visual, organização e experiência do usuário.", perfil: "perfis/aluno_I/perfilI.html" },
-    { nome: "Arthur Stradioto da Silva", funcao: "Git/GitHub", descricao: "Organização do repositório e colaboração da equipe.", perfil: "perfis/aluno_J/perfilJ.html" },
-    { nome: "Maicon Carlos Cristofolini Junior", funcao: "Testes", descricao: "Revisão final, responsividade e ajustes.", perfil: "perfis/aluno_K/perfilK.html" }
-]
 
+    { nome: "Thiago Ademar Ludvichak", funcao: "Líder do projeto", descricao: "Responsável por coordenar a equipe e manter tudo no caminho certo.", perfil: "Perfis/ThiagoLudvichak/perfil.html", foto: "Perfis/ThiagoLudvichak/foto_perfil_thiago.jpg", cor: "#b52b2b", fundo: "#1c0808" },
+
+    { nome: "Anthony Santa Ana Souza", funcao: "Desenvolvimento", descricao: "Participação no desenvolvimento e construção do site.", perfil: "Perfis/AnthonySouza/perfilAnthony.html", foto: "Perfis/AnthonySouza/Imagens_Anthony/Anthony7.jpg", cor: "#fcf5f5", fundo: "#2c2c2c" },
+
+    { nome: "Pedro Elias dos Santos Vincensi", funcao: "Tecnico em Metafisica", descricao: "Organização das informações e apoio à estrutura do projeto.", perfil: "Perfis/PedroEliasVincensi/perfilPedro.html", foto: "Perfis/PedroEliasVincensi/foto_perfil.jpg", cor: "#ff0000", fundo: "#620000" },
+    
+    { nome: "Lucas Santos de Liz", funcao: "Design", descricao: "Criação e organização da identidade visual.", perfil: "perfis/aluno_D/perfilD.html", foto: "Perfis/aluno_D/fotoPerfilD.jpg", cor: "#d8139d", fundo: "#0d2ce0" },
+
+    { nome: "Gabriel da Rosa Dombroski", funcao: "Desenvolvimento", descricao: "Implementação de funcionalidades e componentes.", perfil: "Perfis/GabrielDombroski/perfil.html", foto: "Perfis/GabrielDombroski/Imagens/foto_perfil.jpeg", cor: "#6d28d9", fundo: "#120b20" },
+    
+    { nome: "Victor Matheus Albino Freitas", funcao: "Testes", descricao: "Verificação do funcionamento e identificação de melhorias.", perfil: "perfis/VictorFreitas/perfil.html", cor: "#2bb59e", fundo: "#08cc12" },
+
+    { nome: "Murilo da Silva Siqueira", funcao: "Documentação", descricao: "Organização da documentação e apresentação do projeto.", perfil: "Perfis/aluno_G/perfilG.html", foto: "Perfis/aluno_G/fotoPerfilG.jpg", cor: "#3711e4", fundo: "#0c9164" },
+
+    { nome: "Tamiris de Fátima Pereira Marafigo", funcao: "Desenvolvimento", descricao: "Construção das seções e integração do conteúdo.", perfil: "Perfis/aluno_H/perfilH.html", foto: "Perfis/aluno_H/fotoPerfilH.jpg", cor: "#d81587", fundo: "#74b629" },
+
+    { nome: "Guilherme Cardoso Antunes", funcao: "Design", descricao: "Apoio visual, organização e experiência do usuário.", perfil: "Perfis/aluno_I/perfilI.html", foto: "Perfis/aluno_I/fotoPerfilI.jpg", cor: "#47b52b", fundo: "#703cff" },
+
+    { nome: "Arthur Stradioto da Silva", funcao: "Git/GitHub", descricao: "Organização do repositório e colaboração da equipe.", perfil: "Perfis/aluno_J/perfilJ.html", foto: "Perfis/aluno_J/fotoPerfilJ.jpg", cor: "#092441", fundo: "#7c02e0" },
+
+    { nome: "Maicon Carlos Cristofolini Junior", funcao: "Testes", descricao: "Revisão final, responsividade e ajustes.", perfil: "Perfis/aluno_K/perfilK.html", foto: "Perfis/aluno_K/fotoPerfilK.jpg", cor: "#972471", fundo: "#1c0808" }
+]
+ 
 let posicaoMembroAtual = 0;
 
 /* Carrossel da Equipe */
 
-function avatar(nome, posicao) {
-    const iniciais = nome.split(" ").map(p => p[0]).join("").slice(0, 2).toUpperCase();
-    return `<div class="avatar-recuado" style="width:${posicao === posicaoMembroAtual ? 110 : 64}px;height:${posicao === posicaoMembroAtual ? 110 : 64}px;border-radius:50%;display:grid;place-items:center;background:#0b3155;border:2px solid #1687ff;color:#7fc2ff;font-weight:800;font-size:${posicao === posicaoMembroAtual ? 28 : 17}px">${iniciais}</div>`;
+function avatar(membro, posicao) {
+    const atual = posicao === posicaoMembroAtual;
+    const tamanho = atual ? 110 : 64;
+    const iniciais = membro.nome.split(" ").map(p => p[0]).join("").slice(0, 2).toUpperCase();
+    const fundo = membro.foto
+        ? `background:url('${membro.foto}') center / cover, #0b3155;`
+        : `background:#0b3155;`;
+
+    const borda = membro.cor || "#1687ff";
+
+    return `<div class="avatar-recuado" style="width:${tamanho}px;height:${tamanho}px;border-radius:50%;display:grid;place-items:center;${fundo}border:2px solid ${borda};color:#7fc2ff;font-weight:800;font-size:${atual ? 28 : 17}px">${membro.foto ? "" : iniciais}</div>`;
 }
 
 function carregarEquipe() {
@@ -28,26 +47,44 @@ function carregarEquipe() {
     const membroEsquerda = (posicaoMembroAtual - 1 + equipe.length) % equipe.length;
     const membroDireita = (posicaoMembroAtual + 1) % equipe.length;
 
-    document.querySelector("#membro-central").innerHTML = `
-        ${avatar(membroAtual.nome, posicaoMembroAtual)}
+    let central = document.querySelector("#membro-central");
+
+        central.style.setProperty("--cor-card", membroAtual.cor || "#1687ff");
+
+        central.style.setProperty("--fundo-card", membroAtual.fundo || "#0b1426");
+    
+    central.innerHTML = `
+        ${avatar(membroAtual, posicaoMembroAtual)}
         <h3>${membroAtual.nome}</h3>
         <span class="cargo">${membroAtual.funcao}</span>
         <p>${membroAtual.descricao}</p>
         <a class="link-card" href="${membroAtual.perfil}" aria-label="Ver perfil de ${membroAtual.nome}"></a>
     `;
 
-    document.querySelector("#membro-a-esquerda").innerHTML = `
+    let esquerda = document.querySelector("#membro-a-esquerda");
+
+    esquerda.style.setProperty("--cor-card", equipe[membroEsquerda].cor || "#1687ff");
+
+    esquerda.style.setProperty("--fundo-card", equipe[membroEsquerda].fundo || "#0b1426");
+
+    esquerda.innerHTML = `
         <div class="card-membro">
-            ${avatar(equipe[membroEsquerda].nome, membroEsquerda)}
+            ${avatar(equipe[membroEsquerda], membroEsquerda)}
             <h3>${equipe[membroEsquerda].nome}</h3>
             <p>${equipe[membroEsquerda].funcao}</p>
             <a class="link-card" href="${equipe[membroEsquerda].perfil}" aria-label="Ver perfil de ${equipe[membroEsquerda].nome}"></a>
         </div>
     `;
 
-    document.querySelector("#membro-a-direita").innerHTML = `
+    let direita = document.querySelector("#membro-a-direita");
+
+    direita.style.setProperty("--cor-card", equipe[membroDireita].cor || "#1687ff");
+
+    direita.style.setProperty("--fundo-card", equipe[membroDireita].fundo || "#0b1426");
+    
+    direita.innerHTML = `
         <div class="card-membro">
-            ${avatar(equipe[membroDireita].nome, membroDireita)}
+            ${avatar(equipe[membroDireita], membroDireita)}
             <h3>${equipe[membroDireita].nome}</h3>
             <p>${equipe[membroDireita].funcao}</p>
             <a class="link-card" href="${equipe[membroDireita].perfil}" aria-label="Ver perfil de ${equipe[membroDireita].nome}"></a>
