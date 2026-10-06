@@ -20,7 +20,7 @@ const equipe = [
 
     { nome: "Guilherme Cardoso Antunes", funcao: "Design", descricao: "Apoio visual, organização e experiência do usuário.", perfil: "Perfis/aluno_I/perfilI.html", foto: "Perfis/aluno_I/fotoPerfilI.jpg", cor: "#47b52b", fundo: "#703cff" },
 
-    { nome: "Arthur Stradioto da Silva", funcao: "Git/GitHub", descricao: "Organização do repositório e colaboração da equipe.", perfil: "Perfis/aluno_J/perfilJ.html", foto: "Perfis/aluno_J/fotoPerfilJ.jpg", cor: "#092441", fundo: "#7c02e0" },
+    { nome: "Arthur Stradioto da Silva", funcao: "Git/GitHub", descricao: "Organização do repositório e colaboração da equipe.", perfil: "Perfis/ArthurStradioto/perfil.html", foto: "Perfis/ArthurStradioto/imagens/foto_arthur.jpeg", cor: "#092441", fundo: "#7c02e0" },
 
     { nome: "Maicon Carlos Cristofolini Junior", funcao: "Testes", descricao: "Revisão final, responsividade e ajustes.", perfil: "Perfis/aluno_K/perfilK.html", foto: "Perfis/aluno_K/fotoPerfilK.jpg", cor: "#972471", fundo: "#1c0808" }
 ]
