@@ -527,16 +527,14 @@ h1 {
     object-fit: cover;
     background: #0b3155;
 }
-
-.member-card:hover,
-.member-featured:hover {
-    transform: translateY(-4px);
+.card-membro:hover {
+    border-color: var(--cor-card, var(--cor-fonte-2));
+    box-shadow: 0 15px 35px color-mix(in srgb, var(--cor-card, var(--cor-fonte-2)) 20%, transparent);
 }
 
-.card-membro:hover { border-color: var(--cor-fonte-2); }
-.membro-central:hover { box-shadow: 0 24px 55px rgba(22, 135, 255, .25); }
-
-
+.membro-central:hover {
+    box-shadow: 0 24px 55px color-mix(in srgb, var(--cor-card, var(--cor-fonte-2)) 25%, transparent);
+}
 
 .membro-central {
     position: relative;
@@ -547,9 +545,9 @@ h1 {
     align-content: center;
     padding: 25px;
     text-align: center;
-    border: 1px solid var(--cor-fonte-2);
+    border: 1px solid var(--cor-card, var(--cor-fonte-2));
     border-radius: 18px;
-    background: linear-gradient(160deg, rgba(10, 44, 77, .95), rgba(4, 18, 32, .95));
+    background: var(--fundo-card, linear-gradient(160deg, rgba(10, 44, 77, .95), rgba(4, 18, 32, .95)));
     box-shadow: 0 20px 50px rgba(0, 0, 0, .25);
 }
 
@@ -772,4 +770,21 @@ footer a {
     footer {
         padding: 30px 22px;
     }
+
+}
+#membro-central,
+.card-membro {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    color: var(--txt);
+#membro-central,
+.card-membro {
+    background: #0b1426;
+    border-color: var(--cor-card, #1687ff);
+}
+}
+#membro-central,
+.card-membro {
+    background: var(--fundo-card, #0b1426);
+    border-color: var(--cor-card, #1687ff);
 }
