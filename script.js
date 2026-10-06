@@ -21,7 +21,7 @@ const equipe = [
 
     { nome: "Arthur Stradioto da Silva", funcao: "Git/GitHub", descricao: "Organização do repositório e colaboração da equipe.", perfil: "Perfis/ArthurStradioto/perfil.html", foto: "Perfis/ArthurStradioto/imagens/foto_arthur.jpeg", cor: "#092441", fundo: "#7c02e0" },
 
-    { nome: "Maicon Carlos Cristofolini Junior", funcao: "Testes", descricao: "Revisão final, responsividade e ajustes.", perfil: "Perfis/aluno_K/perfilK.html", foto: "Perfis/aluno_K/fotoPerfilK.jpg", cor: "#972471", fundo: "#1c0808" }
+    { nome: "Maicon Carlos Cristofolini Junior", funcao: "Testes", descricao: "Revisão final, responsividade e ajustes.", perfil: "Perfis/MaiconCristofolini/perfil.html", foto: "Perfis/MaiconCristofolini/Imagens/Foto-perfil.jpeg", cor: "#000000", fundo: "#000c42" }
 ]
  
 let posicaoMembroAtual = 0;
