@@ -9,7 +9,7 @@ const equipe = [
 
     { nome: "Lucas Santos de Liz", funcao: "Design", descricao: "Criação e organização da identidade visual.", perfil: "perfis/aluno_D/perfilD.html", foto: "Perfis/aluno_D/fotoPerfilD.jpg", cor: "#d8139d", fundo: "#0d2ce0" },
 
-    { nome: "Gabriel da Rosa Dombroski", funcao: "Desenvolvimento", descricao: "Implementação de funcionalidades e componentes.", perfil: "Perfis/GabrielDombroski/perfil.html", foto: "Perfis/GabrielDombroski/foto_perfil.jpeg", cor: "#492bb5", fundo: "#fa9e9e" },
+    { nome: "Gabriel da Rosa Dombroski", funcao: "Desenvolvimento", descricao: "Implementação de funcionalidades e componentes.", perfil: "Perfis/GabrielDombroski/perfil.html", foto: "Perfis/GabrielDombroski/Imagens/foto_perfil.jpeg", cor: "#6d28d9", fundo: "#120b20" },
     
     { nome: "Victor Matheus Albino Freitas", funcao: "Testes", descricao: "Verificação do funcionamento e identificação de melhorias.", perfil: "Perfis/aluno_F/perfilF.html", foto: "Perfis/aluno_F/fotoPerfilF.jpg", cor: "#2bb59e", fundo: "#08cc12" },
 
