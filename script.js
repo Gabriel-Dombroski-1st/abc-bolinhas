@@ -1,6 +1,7 @@
 /* Membros da Equipe */
 
 const equipe = [
+
     { nome: "Thiago Ademar Ludvichak", funcao: "Líder do projeto", descricao: "Responsável por coordenar a equipe e manter tudo no caminho certo.", perfil: "Perfis/ThiagoLudvichak/perfil.html", foto: "Perfis/ThiagoLudvichak/foto_perfil_thiago.jpg", cor: "#b52b2b", fundo: "#1c0808" },
 
     { nome: "Anthony Santa Ana Souza", funcao: "Desenvolvimento", descricao: "Participação no desenvolvimento e construção do site.", perfil: "Perfis/AnthonySouza/perfilAnthony.html", foto: "Perfis/AnthonySouza/Imagens_Anthony/Anthony7.jpg", cor: "#fcf5f5", fundo: "#2c2c2c" },
@@ -11,7 +12,7 @@ const equipe = [
 
     { nome: "Gabriel da Rosa Dombroski", funcao: "Desenvolvimento", descricao: "Implementação de funcionalidades e componentes.", perfil: "Perfis/GabrielDombroski/perfil.html", foto: "Perfis/GabrielDombroski/Imagens/foto_perfil.jpeg", cor: "#6d28d9", fundo: "#120b20" },
     
-    { nome: "Victor Matheus Albino Freitas", funcao: "Testes", descricao: "Verificação do funcionamento e identificação de melhorias.", perfil: "Perfis/aluno_F/perfilF.html", foto: "Perfis/aluno_F/fotoPerfilF.jpg", cor: "#2bb59e", fundo: "#08cc12" },
+    { nome: "Victor Matheus Albino Freitas", funcao: "Testes", descricao: "Verificação do funcionamento e identificação de melhorias.", perfil: "perfis/VictorFreitas/perfil.html", cor: "#2bb59e", fundo: "#08cc12" },
 
     { nome: "Murilo da Silva Siqueira", funcao: "Documentação", descricao: "Organização da documentação e apresentação do projeto.", perfil: "Perfis/aluno_G/perfilG.html", foto: "Perfis/aluno_G/fotoPerfilG.jpg", cor: "#3711e4", fundo: "#0c9164" },
 
