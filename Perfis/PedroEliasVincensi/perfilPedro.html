@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pedro Vincensi | Técnico em Metafisica</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head>
+<body>
+
+//WOW
+<!-- ===================== CSS ===================== -->
+<style>
+  .alma-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 0, 0, 0.82);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    z-index: 9999;
+    font-family: Georgia, "Times New Roman", serif;
+  }
+  .alma-overlay.oculto { display: none; }
+
+  .alma-modal {
+    width: 100%;
+    max-width: 460px;
+    background: #140505;
+    border: 1px solid #5c0a0a;
+    border-radius: 10px;
+    padding: 24px;
+    color: #e8d5d5;
+    box-shadow: 0 0 40px rgba(160, 0, 0, 0.35);
+    animation: alma-entrada 0.4s ease-out;
+  }
+  @keyframes alma-entrada {
+    from { opacity: 0; transform: translateY(16px) scale(0.97); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  .alma-topo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .alma-pentagrama {
+    font-size: 34px;
+    color: #c01818;
+    text-shadow: 0 0 12px rgba(220, 20, 20, 0.7);
+    animation: alma-pulsar 2.4s ease-in-out infinite;
+  }
+  @keyframes alma-pulsar {
+    0%, 100% { opacity: 0.7; text-shadow: 0 0 6px rgba(220, 20, 20, 0.4); }
+    50%      { opacity: 1;   text-shadow: 0 0 18px rgba(255, 30, 30, 0.9); }
+  }
+  .alma-titulo {
+    margin: 0;
+    font-size: 20px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: #f0c8c8;
+  }
+
+  .alma-termos {
+    background: #0a0202;
+    border: 1px solid #3a0808;
+    border-radius: 6px;
+    height: 130px;
+    overflow-y: auto;
+    padding: 12px;
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: #b89a9a;
+    margin-bottom: 16px;
+  }
+  .alma-termos p { margin: 0 0 8px; }
+  .alma-termos::-webkit-scrollbar { width: 8px; }
+  .alma-termos::-webkit-scrollbar-thumb { background: #5c0a0a; border-radius: 4px; }
+
+  .alma-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .alma-check input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    background: #0a0202;
+    border: 1.5px solid #7a1010;
+    border-radius: 3px;
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+    transition: background 0.15s, box-shadow 0.15s;
+  }
+  .alma-check input::after {
+    content: "";
+    width: 9px;
+    height: 9px;
+    background: #ff3030;
+    transform: scale(0);
+    transition: transform 0.12s;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0, 43% 62%);
+  }
+  .alma-check input:checked { box-shadow: 0 0 8px rgba(220, 20, 20, 0.7); }
+  .alma-check input:checked::after { transform: scale(1); }
+
+  .alma-erro {
+    min-height: 18px;
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: #ff5050;
+  }
+  .alma-modal.tremer { animation: alma-tremer 0.35s; }
+  @keyframes alma-tremer {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-8px); }
+    40% { transform: translateX(8px); }
+    60% { transform: translateX(-5px); }
+    80% { transform: translateX(5px); }
+  }
+
+  .alma-botoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .alma-btn {
+    font-family: inherit;
+    font-size: 14px;
+    padding: 9px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid #5c0a0a;
+    background: transparent;
+    color: #c9a8a8;
+    transition: background 0.15s, box-shadow 0.15s;
+  }
+  .alma-btn:hover { background: #240808; }
+  .alma-btn.principal {
+    background: #8c0f0f;
+    border-color: #b01818;
+    color: #fff;
+  }
+  .alma-btn.principal:hover {
+    background: #a81212;
+    box-shadow: 0 0 14px rgba(220, 20, 20, 0.6);
+  }
+
+  .alma-final { display: none; text-align: center; padding: 12px 0; }
+  .alma-final .alma-pentagrama { font-size: 52px; display: block; margin-bottom: 8px; }
+  .alma-final h3 { margin: 0 0 6px; font-weight: normal; font-size: 20px; color: #f0c8c8; }
+  .alma-final p { margin: 0 0 16px; font-size: 14px; color: #b89a9a; }
+</style>
+
+<!-- ===================== HTML ===================== -->
+<div class="alma-overlay" id="almaOverlay">
+  <div class="alma-modal" id="almaModal" role="dialog" aria-modal="true" aria-labelledby="almaTitulo">
+
+    <div id="almaForm">
+      <div class="alma-topo">
+        <span class="alma-pentagrama" aria-hidden="true">⛧</span>
+        <h2 class="alma-titulo" id="almaTitulo">Termos de uso</h2>
+      </div>
+
+      <div class="alma-termos">
+        <p>1. Ao continuar, você declara ter lido, compreendido e ignorado todos os termos abaixo.</p>
+        <p>2. A alma do usuário passa a ser propriedade do Contratante, em caráter irrevogável, perpétuo e sem direito a reembolso.</p>
+        <p>3. O Contratante não se responsabiliza por pesadelos, arrepios repentinos ou velas que se acendam sozinhas.</p>
+        <p>4. Cláusula 4 omitida por motivos de sanidade.</p>
+        <p>5. Em caso de dúvida, consulte o item 2.</p>
+      </div>
+
+      <label class="alma-check">
+        <input type="checkbox" id="almaIdade">
+        <span>Tenho mais de 18 anos</span>
+      </label>
+      <label class="alma-check">
+        <input type="checkbox" id="almaAlma">
+        <span>Aceito vender minha alma</span>
+      </label>
+
+      <p class="alma-erro" id="almaErro" role="alert"></p>
+
+      <div class="alma-botoes">
+        <button class="alma-btn" id="almaRecusar" type="button">Recusar</button>
+        <button class="alma-btn principal" id="almaContinuar" type="button">Continuar</button>
+      </div>
+    </div>
+
+    <div class="alma-final" id="almaFinal">
+      <span class="alma-pentagrama" aria-hidden="true">⛧</span>
+      <h3 id="almaFinalTitulo"></h3>
+      <p id="almaFinalTexto"></p>
+      <button class="alma-btn" id="almaFechar" type="button">Fechar</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===================== JAVASCRIPT ===================== -->
+<script>
+  (function () {
+    var overlay  = document.getElementById('almaOverlay');
+    var modal    = document.getElementById('almaModal');
+    var form     = document.getElementById('almaForm');
+    var final    = document.getElementById('almaFinal');
+    var idade    = document.getElementById('almaIdade');
+    var alma     = document.getElementById('almaAlma');
+    var erro     = document.getElementById('almaErro');
+
+    function mostrarErro(msg) {
+      erro.textContent = msg;
+      modal.classList.remove('tremer');
+      void modal.offsetWidth; // reinicia a animação
+      modal.classList.add('tremer');
+    }
+
+    function mostrarFinal(titulo, texto) {
+      document.getElementById('almaFinalTitulo').textContent = titulo;
+      document.getElementById('almaFinalTexto').textContent = texto;
+      form.style.display = 'none';
+      final.style.display = 'block';
+    }
+
+    document.getElementById('almaContinuar').addEventListener('click', function () {
+      if (!idade.checked) { mostrarErro('Confirme que você tem mais de 18 anos.'); return; }
+      if (!alma.checked)  { mostrarErro('Marque a caixa para continuar.'); return; }
+      erro.textContent = '';
+      mostrarFinal('Alma recebida', 'Obrigado pela preferência. Sua alma está em boas mãos.');
+    });
+
+    document.getElementById('almaRecusar').addEventListener('click', function () {
+      mostrarFinal('Tudo bem', 'Sua alma continua com você. Por enquanto.');
+    });
+
+    document.getElementById('almaFechar').addEventListener('click', function () {
+      overlay.classList.add('oculto');
+    });
+
+    idade.addEventListener('change', function () { erro.textContent = ''; });
+    alma.addEventListener('change',  function () { erro.textContent = ''; });
+  })();
+</script>
+
+//WOW
+
+<aside class="side">
+  <a class="back"href="#" onclick="glitchRedirect('../../index.html')">← Retornar ao plano material</a>
+  <div class="logo"><div class="c"><img src="foto_perfil.jpg"></div><b>Pedro <span>Vincensi</span></b><small>Técnico em Metafisica</small></div>
+  <nav><a class="on" href="#inicio">Início</a><a href="#sobre">Sobre mim</a><a href="#habilidades">Habilidades</a><a href="#projetos">Resenhas</a><a href="#contato">Evocação</a></nav>
+  <div class="social"><a href="https://instagram.com/Hotaruzxh">ꗴ</a><a href="#">ꗶ</a><a href="#">ꗳ</a></div>
+</aside>
+<main>
+<section class="hero" id="inicio">
+  <p class="hi">Olá, eu sou</p>
+  <h1>Pedro <span>Vincensi</span></h1>
+  <h2>Metafisica Transcendental</h2>
+  <p class="d">Cansado de se render ao plano fisico que limita e domina cada sensação e experiencia que você presencial como normal? Se afogue no limbro existencial da limiaridade, ou, chegue a apoteose sendo guiado por Nyarlathotep</p>
+  <div class="btns"><a class="btn p" id="tarotPuxar">Que tal uma carta?</a><a class="btn" id="comandoEvocar">Evocar um comandado.</a></div>
+</section>
+<section id="sobre">
+  <h3>Sobre mim</h3>
+  <div class="about"><div class="ph"></div><div>
+    <p>Tudo o que você chama de vida é uma sombra projetada por algo que ainda não olhou de frente. Não ofereço respostas, pois respostas são paredes. Conduzo aqueles que já sentiram o peso invisível da matéria e perceberam que o mundo que tocam é apenas a superfície de algo. O caminho tem três portas: o Desprendimento, em que se solta o que foi dado ao nascer, nome, medo e memória; o Silêncio, em que se habita o espaço onde o pensamento cessa e o que resta começa a falar; e a Apoteose, que não é um destino, mas o instante em que o buscador percebe que sempre foi aquilo que buscava. Poucos chegam à terceira porta, e menos ainda retornam. Não procuro seguidores, aguardo aqueles que já estão a caminho. Se você leu até aqui, não foi por acaso. Quando estiver pronto, o caminho se mostrará.</p>
+    <div class="tags"><span>Arquetipos</span><span>Metafisica</span><span>Expoentes</span><span>Marcas</span><span>Existencias</span></div>
+  </div></div>
+</section>
+<section id="habilidades">
+  <h3>Habilidades</h3>
+  <iframe src="habilidades.html" title="Habilidades" height="130" loading="lazy"></iframe>
+</section>
+<section id="projetos">
+  <h3>Resenhas</h3>
+  <div class="projs">
+    <a class="proj" href="#"><i style="background-image:url(img/setup.jpg)"></i><div><b>Transender o Material</b>Livrar-se das correntes que lhe preendem aos seus desejos mundanos.</div></a>
+    <a class="proj" href="#"><i style="background-image:url(img/focus.jpg)"></i><div><b>O ciclo de pedras Stonehange</b>Investigamos os misterios daqueles que vieram antes e diexaram sua arte magia e acestraliedade para que nos pudessemos transecer como eles.</div></a>
+    <a class="proj" href="#"><i style="background-image:url(img/fazer.jpg)"></i><div><b>Ciclos Celestiais</b>Atingir estado de apoteose e juntar-se a s vontade e existencias singulares que regem a relaidade por detraz dos panos.</div></a>
+    <a class="proj" href="#"><i style="background-image:url(img/viagens.jpg)"></i><div><b>Ciração e Concepção das Ideias</b>Junção de pensamentos com aquilo que o plano material entreega de melhor para nos criamos nossas propias ideias</div></a>
+  </div>
+</section>
+<section id="contato">
+  <h3>Contato</h3>
+  <iframe src="contatos.html" title="Contato" height="90" loading="lazy"></iframe>
+</section>
+
+<!-- ===================== CSS ===================== -->
+<style>
+  .tarot-abrir {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    padding: 11px 22px;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #8c0f0f;
+    border: 1px solid #b01818;
+    color: #fff;
+    transition: background 0.15s, box-shadow 0.15s;
+  }
+  .tarot-abrir:hover:not(:disabled) {
+    background: #a81212;
+    box-shadow: 0 0 14px rgba(220, 20, 20, 0.6);
+  }
+  .tarot-abrir:disabled {
+    background: #240808;
+    border-color: #3a0808;
+    color: #7a5a5a;
+    cursor: default;
+  }
+
+  .tarot-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    z-index: 9999;
+    font-family: Georgia, "Times New Roman", serif;
+    overflow-y: auto;
+  }
+  .tarot-overlay.oculto { display: none; }
+
+  .tarot-carta {
+    width: 100%;
+    max-width: 380px;
+    background: #140505;
+    border: 1px solid #5c0a0a;
+    border-radius: 10px;
+    padding: 8px;
+    color: #e8d5d5;
+    box-shadow: 0 0 40px rgba(160, 0, 0, 0.35);
+  }
+  .tarot-carta.revelar { animation: tarot-revelar 0.5s ease-out; }
+  @keyframes tarot-revelar {
+    from { opacity: 0; transform: rotateY(90deg) scale(0.95); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  .tarot-moldura {
+    border: 1px solid #3a0808;
+    border-radius: 6px;
+    padding: 18px 16px 16px;
+    text-align: center;
+  }
+
+  .tarot-topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #8a5a5a;
+  }
+  .tarot-pentagrama {
+    font-size: 22px;
+    color: #c01818;
+    text-shadow: 0 0 10px rgba(220, 20, 20, 0.7);
+    animation: tarot-pulsar 2.4s ease-in-out infinite;
+  }
+  @keyframes tarot-pulsar {
+    0%, 100% { opacity: 0.7; }
+    50%      { opacity: 1; text-shadow: 0 0 18px rgba(255, 30, 30, 0.9); }
+  }
+
+  .tarot-numero {
+    margin: 10px 0 2px;
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #c01818;
+  }
+  .tarot-nome {
+    margin: 0 0 12px;
+    font-size: 22px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: #f0c8c8;
+  }
+
+  .tarot-arte {
+    background: #0a0202;
+    border: 1px solid #3a0808;
+    border-radius: 6px;
+    padding: 14px 8px;
+    margin: 0 0 14px;
+    overflow-x: auto;
+  }
+  .tarot-arte pre {
+    display: inline-block;
+    text-align: left;
+    margin: 0;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
+    line-height: 1.15;
+    color: #d02020;
+    text-shadow: 0 0 6px rgba(200, 20, 20, 0.5);
+    white-space: pre;
+  }
+
+  .tarot-previsao {
+    margin: 0 0 14px;
+    font-size: 14px;
+    line-height: 1.6;
+    font-style: italic;
+    color: #b89a9a;
+  }
+  .tarot-aviso {
+    margin: 0 0 14px;
+    font-size: 13px;
+    color: #ff5050;
+  }
+
+  .tarot-botoes {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  .tarot-btn {
+    font-family: inherit;
+    font-size: 14px;
+    padding: 9px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid #5c0a0a;
+    background: transparent;
+    color: #c9a8a8;
+    transition: background 0.15s, box-shadow 0.15s;
+  }
+  .tarot-btn:hover { background: #240808; }
+  .tarot-btn.principal {
+    background: #8c0f0f;
+    border-color: #b01818;
+    color: #fff;
+  }
+  .tarot-btn.principal:hover {
+    background: #a81212;
+    box-shadow: 0 0 14px rgba(220, 20, 20, 0.6);
+  }
+  .tarot-btn.escondido { display: none; }
+</style>
+
+<!-- ===================== HTML ===================== -->
+<!-- Se você já tem um botão "Puxar uma Carta", basta dar a ele id="tarotPuxar" e apagar este -->
+
+<div class="tarot-overlay oculto" id="tarotOverlay">
+  <div class="tarot-carta" id="tarotCarta" role="dialog" aria-modal="true" aria-labelledby="tarotNome">
+    <div class="tarot-moldura">
+
+      <div class="tarot-topo">
+        <span class="tarot-pentagrama" aria-hidden="true">⛧</span>
+        <span id="tarotContador"></span>
+        <span class="tarot-pentagrama" aria-hidden="true">⛧</span>
+      </div>
+
+      <p class="tarot-numero" id="tarotNumero"></p>
+      <h2 class="tarot-nome" id="tarotNome"></h2>
+
+      <div class="tarot-arte"><pre id="tarotArte" aria-hidden="true"></pre></div>
+
+      <p class="tarot-previsao" id="tarotPrevisao"></p>
+      <p class="tarot-aviso" id="tarotAviso"></p>
+
+      <div class="tarot-botoes">
+        <button class="tarot-btn" id="tarotFechar" type="button">Fechar</button>
+        <button class="tarot-btn principal" id="tarotOutra" type="button">Puxar outra</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ===================== JAVASCRIPT ===================== -->
+<script>
+  (function () {
+    function arte(texto) { return texto.replace(/^\n|\n$/g, ''); }
+
+    var CARTAS = [
+      {
+        num: '0', nome: 'O Louco',
+        arte: arte(String.raw`
+      .-.
+     (x x)
+      |=|    *
+   ---' '--.
+           \|
+   .........|
+   .........|__ ?
+`),
+        previsao: 'Você dá o próximo passo com os olhos fechados. O chão já não está mais lá, e ninguém vai ouvir a queda.'
+      },
+      {
+        num: 'I', nome: 'O Mago',
+        arte: arte(String.raw`
+     _.-"-._
+    (  o o  )
+     \ \_/ /
+   ---'---'---
+      /|\
+     / | \  *
+    /__|__\
+`),
+        previsao: 'Tudo o que você precisa já está sobre a mesa: uma faca, uma vela e um nome que não deveria ser dito em voz alta.'
+      },
+      {
+        num: 'II', nome: 'A Sacerdotisa',
+        arte: arte(String.raw`
+      _____
+     /  _  \
+    |  (_)  |
+    |  / \  |
+     \/___\/
+     /|   |\
+    /_|___|_\
+`),
+        previsao: 'Alguém sabe o que você escondeu no porão. Ela não vai dizer nada, só vai sorrir quando você passar.'
+      },
+      {
+        num: 'III', nome: 'A Imperatriz',
+        arte: arte(String.raw`
+    * * * * *
+     \_____/
+     ( o o )
+      \ _ /
+    ___/ \___
+   /  /|||\  \
+  /__/_|||_\__\
+`),
+        previsao: 'Aquilo que você plantou vai crescer. As raízes já passaram da terra e procuram outra coisa para abraçar.'
+      },
+      {
+        num: 'IV', nome: 'O Imperador',
+        arte: arte(String.raw`
+     [=====]
+     | o o |
+     |  ^  |
+     [_____]
+    /|#####|\
+   / |#####| \
+  [] |#####| []
+`),
+        previsao: 'O trono é de ossos e o reino é de silêncio. Quem obedece sem perguntar nunca é enterrado sozinho.'
+      },
+      {
+        num: 'V', nome: 'O Hierofante',
+        arte: arte(String.raw`
+       _+_
+      /___\
+     ( o o )
+    __\ - /__
+   /  |   |  \
+  +   |   |   +
+     /|   |\
+`),
+        previsao: 'Os sinos tocam, mas não há ninguém na torre. Você vai repetir uma oração que não aprendeu e vai saber o final.'
+      },
+      {
+        num: 'VI', nome: 'Os Enamorados',
+        arte: arte(String.raw`
+    (x x)   (x x)
+     /|\     /|\
+     / \  <3 / \
+        \   /
+   ------\ /------
+          v
+`),
+        previsao: 'Dois corações, um só pulso. Quando um parar de bater, o outro vai continuar por pura teimosia.'
+      },
+      {
+        num: 'VII', nome: 'O Carro',
+        arte: arte(String.raw`
+      _____
+     /_____\
+    |  o o  |
+    |_______|
+   (O)-----(O)
+    ==\___/==
+`),
+        previsao: 'Você vai avançar rápido e sem freio. Os cavalos não são cavalos, e o cocheiro faz tempo que parou de respirar.'
+      },
+      {
+        num: 'VIII', nome: 'A Força',
+        arte: arte(String.raw`
+      .-"-.
+     / o o \
+    ( ==^== )
+     \ \_/ /
+     /'---'\
+    //|   |\\
+`),
+        previsao: 'Você vai domar a fera com as mãos nuas. Só depois vai notar de quem eram as marcas de dentes no seu braço.'
+      },
+      {
+        num: 'IX', nome: 'O Eremita',
+        arte: arte(String.raw`
+        *
+       /|\
+     .-'-'-.
+    (  o o  )
+     \_____/
+     /|###|\  |
+    / |###| \ |
+         |_|  |
+`),
+        previsao: 'A lanterna ilumina só um passo à frente. Atrás de você, algo está apagando as pegadas, uma por uma.'
+      },
+      {
+        num: 'X', nome: 'A Roda da Fortuna',
+        arte: arte(String.raw`
+      ___
+    .'   '.
+   / \ | / \
+  |---(+)---|
+   \ / | \ /
+    '.___.'
+`),
+        previsao: 'A roda gira e quem estava por cima agora está por baixo. Hoje é a sua vez de ser esmagado.'
+      },
+      {
+        num: 'XI', nome: 'A Justiça',
+        arte: arte(String.raw`
+        |
+    ----+----
+    |   |   |
+   \_/  |  \_/
+        |
+        |
+       /_\
+`),
+        previsao: 'A balança pende para o lado errado. A espada não pergunta se você era culpado, só se você ainda está de pé.'
+      },
+      {
+        num: 'XII', nome: 'O Enforcado',
+        arte: arte(String.raw`
+   ===========
+        ||
+       /  \
+      /_/\_\
+        ||
+       (x x)
+        \_/
+`),
+        previsao: 'Você vai ver o mundo de cabeça para baixo e achar que está tudo certo. A corda vai concordar com você.'
+      },
+      {
+        num: 'XIII', nome: 'A Morte',
+        arte: arte(String.raw`
+      .-"-.
+     / x x \
+     \  ^  /
+      |VVV|
+    __|   |__
+   /  '---'  \
+  /_/   |   \_\
+        |
+`),
+        previsao: 'Ela não vem buscar você hoje. Veio só avisar que já escolheu o dia, e que ele não está longe.'
+      },
+      {
+        num: 'XIV', nome: 'A Temperança',
+        arte: arte(String.raw`
+     \  |  /
+      \ | /
+     ( o.o )
+      /| |\
+     / | | \
+    ~~~~~~~~~
+`),
+        previsao: 'Você mistura o veneno com o remédio até ninguém saber qual é qual. Inclusive você, no último gole.'
+      },
+      {
+        num: 'XV', nome: 'O Diabo',
+        arte: arte(String.raw`
+    /\     /\
+   /  \___/  \
+   \ (o) (o) /
+    \  \_/  /
+   ---\ V /---
+      /|||\
+`),
+        previsao: 'As correntes no seu pescoço são frouxas. Você nunca tentou sair, e é por isso que ele ri.'
+      },
+      {
+        num: 'XVI', nome: 'A Torre',
+        arte: arte(String.raw`
+     _[]_   /
+    |    | /
+    | [] |/
+    |    |\
+    | [] | \
+    |____|  *
+`),
+        previsao: 'O raio já escolheu o telhado. Tudo o que você construiu nos últimos anos vai virar cinza antes do amanhecer.'
+      },
+      {
+        num: 'XVII', nome: 'A Estrela',
+        arte: arte(String.raw`
+       *
+    *  |  *
+     \ | /
+  *----(*)----*
+     / | \
+    *  |  *
+       *
+`),
+        previsao: 'Uma luz distante promete esperança. Ela está morta há milhares de anos, e você só está vendo o que sobrou.'
+      },
+      {
+        num: 'XVIII', nome: 'A Lua',
+        arte: arte(String.raw`
+     .--.
+    / (  \
+   |   )  |
+    \ (  /
+     '--'
+   /\    /\
+  /  \__/  \
+`),
+        previsao: 'Algo uiva à beira do caminho e algo responde de dentro da casa. Você vai descobrir que é a mesma voz.'
+      },
+      {
+        num: 'XIX', nome: 'O Sol',
+        arte: arte(String.raw`
+   \  \ | /  /
+    \ .---. /
+   -- | o o | --
+      '-----'
+    / /  |  \ \
+`),
+        previsao: 'A luz vai ser forte demais. Ela revela tudo o que você enterrou e não deixa sombra para esconder o resto.'
+      },
+      {
+        num: 'XX', nome: 'O Julgamento',
+        arte: arte(String.raw`
+      \ | /
+       (>
+      //
+    ___ ___ ___
+   |___|___|___|
+   [___] [___] [___]
+`),
+        previsao: 'A trombeta soa e as tampas se abrem. Os que você deixou para trás vieram buscar o que lhes é devido.'
+      },
+      {
+        num: 'XXI', nome: 'O Mundo',
+        arte: arte(String.raw`
+     .-"""-.
+    / .---. \
+   | ( x x ) |
+   |  \_^_/  |
+    \ '---' /
+     '-...-'
+`),
+        previsao: 'O ciclo se fecha e você finalmente chega ao fim. O fim, aliás, também estava esperando por você.'
+      }
+    ];
+
+    var botaoPuxar = document.getElementById('tarotPuxar');
+    var overlay    = document.getElementById('tarotOverlay');
+    var carta      = document.getElementById('tarotCarta');
+    var botaoOutra = document.getElementById('tarotOutra');
+    var contador   = document.getElementById('tarotContador');
+    var aviso      = document.getElementById('tarotAviso');
+
+    var baralho = embaralhar(CARTAS.slice());
+    var viradas = 0;
+
+    function embaralhar(lista) {
+      for (var i = lista.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = lista[i]; lista[i] = lista[j]; lista[j] = tmp;
+      }
+      return lista;
+    }
+
+    function puxar() {
+      if (baralho.length === 0) return;
+
+      var c = baralho.pop();
+      viradas++;
+
+      document.getElementById('tarotNumero').textContent   = c.num;
+      document.getElementById('tarotNome').textContent     = c.nome;
+      document.getElementById('tarotArte').textContent     = c.arte;
+      document.getElementById('tarotPrevisao').textContent = c.previsao;
+      contador.textContent = viradas + ' / ' + CARTAS.length;
+
+      if (baralho.length === 0) {
+        aviso.textContent = 'O baralho se esgotou. Atualize a página para embaralhar de novo.';
+        botaoOutra.classList.add('escondido');
+        botaoPuxar.disabled = true;
+        botaoPuxar.textContent = 'Baralho esgotado';
+      } else {
+        aviso.textContent = '';
+        botaoOutra.classList.remove('escondido');
+      }
+
+      overlay.classList.remove('oculto');
+      carta.classList.remove('revelar');
+      void carta.offsetWidth;
+      carta.classList.add('revelar');
+    }
+
+    function fechar() { overlay.classList.add('oculto'); }
+
+    botaoPuxar.addEventListener('click', puxar);
+    botaoOutra.addEventListener('click', puxar);
+    document.getElementById('tarotFechar').addEventListener('click', fechar);
+
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) fechar();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') fechar();
+    });
+  })();
+</script>
+
+<!-- ===================== CSS ===================== -->
+<style>
+  .cmd-abrir {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    padding: 11px 22px;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #8c0f0f;
+    border: 1px solid #b01818;
+    color: #fff;
+    transition: background 0.15s, box-shadow 0.15s;
+  }
+  .cmd-abrir:hover {
+    background: #a81212;
+    box-shadow: 0 0 14px rgba(220, 20, 20, 0.6);
+  }
+
+  .cmd-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    z-index: 9999;
+    font-family: Georgia, "Times New Roman", serif;
+    overflow-y: auto;
+  }
+  .cmd-overlay.oculto { display: none; }
+
+  .cmd-janela {
+    width: 100%;
+    max-width: 520px;
+    background: #140505;
+    border: 1px solid #5c0a0a;
+    border-radius: 10px;
+    padding: 18px;
+    color: #e8d5d5;
+    box-shadow: 0 0 40px rgba(160, 0, 0, 0.35);
+    animation: cmd-entrada 0.4s ease-out;
+  }
+  @keyframes cmd-entrada {
+    from { opacity: 0; transform: translateY(16px) scale(0.97); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  .cmd-topo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .cmd-pentagrama {
+    font-size: 26px;
+    color: #c01818;
+    text-shadow: 0 0 10px rgba(220, 20, 20, 0.7);
+    animation: cmd-pulsar 2.4s ease-in-out infinite;
+  }
+  @keyframes cmd-pulsar {
+    0%, 100% { opacity: 0.7; }
+    50%      { opacity: 1; text-shadow: 0 0 18px rgba(255, 30, 30, 0.9); }
+  }
+  .cmd-titulo {
+    margin: 0;
+    font-size: 18px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: #f0c8c8;
+  }
+
+  .cmd-terminal {
+    background: #070101;
+    border: 1px solid #3a0808;
+    border-radius: 6px;
+    padding: 14px;
+    min-height: 190px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
+    line-height: 1.55;
+    color: #b89a9a;
+    margin-bottom: 14px;
+    overflow-x: auto;
+  }
+  .cmd-linha { margin: 0; white-space: pre-wrap; word-break: break-word; }
+  .cmd-prompt { color: #c01818; }
+  .cmd-comando { color: #ff4040; text-shadow: 0 0 6px rgba(220, 20, 20, 0.5); }
+  .cmd-saida { color: #b89a9a; animation: cmd-aparecer 0.3s ease-out; }
+  .cmd-real {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px dashed #3a0808;
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+    font-size: 13px;
+    color: #8a6a6a;
+    animation: cmd-aparecer 0.5s ease-out;
+  }
+  .cmd-real b { font-style: normal; font-weight: normal; color: #c01818; }
+  @keyframes cmd-aparecer {
+    from { opacity: 0; transform: translateX(-4px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  .cmd-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    background: #ff3030;
+    vertical-align: -2px;
+    margin-left: 2px;
+    animation: cmd-piscar 0.9s steps(1) infinite;
+  }
+  @keyframes cmd-piscar { 50% { opacity: 0; } }
+
+  .cmd-botoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  .cmd-btn {
+    font-family: inherit;
+    font-size: 14px;
+    padding: 9px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid #5c0a0a;
+    background: transparent;
+    color: #c9a8a8;
+    transition: background 0.15s, box-shadow 0.15s;
+  }
+  .cmd-btn:hover { background: #240808; }
+  .cmd-btn.principal {
+    background: #8c0f0f;
+    border-color: #b01818;
+    color: #fff;
+  }
+  .cmd-btn.principal:hover {
+    background: #a81212;
+    box-shadow: 0 0 14px rgba(220, 20, 20, 0.6);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cmd-janela, .cmd-saida, .cmd-real, .cmd-pentagrama, .cmd-cursor { animation: none; }
+  }
+</style>
+
+<!-- ===================== HTML ===================== -->
+<!-- Se você já tem o botão "Evocar um Comando", dê a ele id="comandoEvocar" e apague este -->
+
+<div class="cmd-overlay oculto" id="cmdOverlay">
+  <div class="cmd-janela" role="dialog" aria-modal="true" aria-labelledby="cmdTitulo">
+
+    <div class="cmd-topo">
+      <span class="cmd-pentagrama" aria-hidden="true">⛧</span>
+      <h2 class="cmd-titulo" id="cmdTitulo">Terminal do abismo</h2>
+    </div>
+
+    <div class="cmd-terminal" id="cmdTerminal" aria-live="polite"></div>
+
+    <div class="cmd-botoes">
+      <button class="cmd-btn" id="cmdFechar" type="button">Fechar</button>
+      <button class="cmd-btn principal" id="cmdOutro" type="button">Evocar outro</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===================== JAVASCRIPT ===================== -->
+<script>
+  (function () {
+    var COMANDOS = [
+      {
+        cmd: 'whoami',
+        saida: ['root', '...ou era o que você achava.'],
+        real: 'Mostra o nome do usuário que está logado no terminal.'
+      },
+      {
+        cmd: 'pwd',
+        saida: ['/abismo/fundo/ninguem-volta'],
+        real: 'Mostra o caminho completo da pasta em que você está agora.'
+      },
+      {
+        cmd: 'ls -la',
+        saida: [
+          'drwx------  2 voce  voce  4096 sexta 13  .sombras',
+          '-rw-------  1 voce  voce   666 sexta 13  ultimas_palavras.txt',
+          '-rwxr-xr-x  1 root  root   013 sexta 13  ritual.sh'
+        ],
+        real: 'Lista todos os arquivos da pasta, inclusive os ocultos, com permissões, donos e tamanhos.'
+      },
+      {
+        cmd: 'cat /etc/passwd',
+        saida: [
+          'root:x:0:0:senhor das trevas:/root:/bin/bash',
+          'nobody:x:65534:65534:ninguem:/nonexistent:/usr/sbin/nologin',
+          'alma:x:1000:1000:esta conta ja nao responde:/home/alma:/bin/false'
+        ],
+        real: 'Exibe o arquivo com a lista de usuários do sistema. As senhas ficam em outro lugar, no /etc/shadow.'
+      },
+      {
+        cmd: 'ps aux',
+        saida: [
+          'USER   PID  COMANDO',
+          'root     1  /sbin/init',
+          'root   666  /usr/bin/sussurros --sem-parar',
+          'voce  1313  /bin/bash'
+        ],
+        real: 'Lista todos os processos rodando no sistema, de todos os usuários.'
+      },
+      {
+        cmd: 'kill -9 666',
+        saida: ['processo 666 encerrado.', 'ele não gostou.'],
+        real: 'Envia o sinal SIGKILL, que mata um processo à força, sem deixar ele se despedir. Aqui o número é o PID.'
+      },
+      {
+        cmd: 'uptime',
+        saida: ['03:00:00 ligado ha 13 dias, 6 mortos conectados, load average: 6.66, 6.66, 6.66'],
+        real: 'Mostra há quanto tempo o sistema está ligado, quantos usuários estão logados e a carga média.'
+      },
+      {
+        cmd: 'df -h',
+        saida: [
+          'Sist. Arq.    Tam   Usado  Disp  Uso%',
+          '/dev/sda1     100G   100G    0G  100%  /',
+          '/dev/cripta   666G   665G    1G   99%  /mnt/esquecidos'
+        ],
+        real: 'Mostra o espaço usado e livre em cada disco, em tamanhos legíveis (o -h é de "human").'
+      },
+      {
+        cmd: 'history | tail -3',
+        saida: [
+          '  998  cd /abismo',
+          '  999  ./ritual.sh',
+          ' 1000  você não digitou nenhum desses.'
+        ],
+        real: 'O history lista os comandos já digitados, e o tail -3 pega só os três últimos.'
+      },
+      {
+        cmd: 'ping -c 3 alem',
+        saida: [
+          '64 bytes de alem: icmp_seq=1 tempo=999999 ms',
+          '64 bytes de alem: icmp_seq=2 tempo=999999 ms',
+          '3 enviados, 3 recebidos, 0% perdido. alguém atendeu.'
+        ],
+        real: 'Envia pacotes para um host e mede quanto tempo ele leva para responder. O -c 3 limita a 3 tentativas.'
+      },
+      {
+        cmd: 'sudo su',
+        saida: ['[sudo] senha para voce: ********', 'permissão concedida.', 'você não vai gostar do que vem junto.'],
+        real: 'Usa o sudo para virar o superusuário (root), que pode mexer em tudo. Poder demais pede cuidado.'
+      },
+      {
+        cmd: 'chmod 000 coracao.txt',
+        saida: ['permissões alteradas.', 'agora nem você consegue abrir.'],
+        real: 'Muda as permissões de um arquivo. O 000 tira a leitura, a escrita e a execução de todo mundo.'
+      },
+      {
+        cmd: 'grep -r "medo" /home',
+        saida: [
+          '/home/voce/diario.txt:   estou com medo',
+          '/home/voce/diario.txt:   o medo está atrás da porta',
+          '/home/voce/.bash_history: echo "não tenho medo"'
+        ],
+        real: 'Procura um texto dentro dos arquivos. O -r faz a busca em todas as subpastas.'
+      },
+      {
+        cmd: 'crontab -l',
+        saida: ['# m h dom mon dow  comando', '0 3 * * *  /abismo/ritual.sh'],
+        real: 'Lista as tarefas agendadas do usuário. Esse horário 0 3 significa que roda às 3h da manhã, todo dia.'
+      },
+      {
+        cmd: 'netstat -tuln',
+        saida: [
+          'Proto  Endereço local   Estado',
+          'tcp    0.0.0.0:666      OUVINDO',
+          'tcp    0.0.0.0:13       OUVINDO',
+          'tcp    0.0.0.0:6969     alguém conectou, e não foi você'
+        ],
+        real: 'Mostra as portas abertas e os serviços escutando conexões na máquina.'
+      },
+      {
+        cmd: 'date',
+        saida: ['sexta-feira, 13 de nunca, 03:33:33'],
+        real: 'Mostra a data e a hora atuais do sistema.'
+      }
+    ];
+
+    var botaoEvocar = document.getElementById('comandoEvocar');
+    var overlay     = document.getElementById('cmdOverlay');
+    var terminal    = document.getElementById('cmdTerminal');
+
+    var reduzirMovimento = window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    var fila = [];
+    var ultimo = null;
+    var timer = null;
+
+    function embaralhar(lista) {
+      for (var i = lista.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = lista[i]; lista[i] = lista[j]; lista[j] = tmp;
+      }
+      return lista;
+    }
+
+    function proximo() {
+      if (fila.length === 0) {
+        fila = embaralhar(COMANDOS.slice());
+        if (fila[fila.length - 1] === ultimo && fila.length > 1) {
+          fila.unshift(fila.pop());
+        }
+      }
+      ultimo = fila.pop();
+      return ultimo;
+    }
+
+    function criarLinha(classe, texto) {
+      var p = document.createElement('p');
+      p.className = 'cmd-linha ' + classe;
+      if (texto) p.textContent = texto;
+      terminal.appendChild(p);
+      return p;
+    }
+
+    function cancelar() {
+      if (timer) { clearTimeout(timer); timer = null; }
+    }
+
+    function evocar() {
+      cancelar();
+      terminal.innerHTML = '';
+      overlay.classList.remove('oculto');
+
+      var c = proximo();
+
+      var linha = criarLinha('');
+      var prompt = document.createElement('span');
+      prompt.className = 'cmd-prompt';
+      prompt.textContent = 'root@abismo:~# ';
+      var digitado = document.createElement('span');
+      digitado.className = 'cmd-comando';
+      var cursor = document.createElement('span');
+      cursor.className = 'cmd-cursor';
+      linha.appendChild(prompt);
+      linha.appendChild(digitado);
+      linha.appendChild(cursor);
+
+      function mostrarSaida(i) {
+        if (i < c.saida.length) {
+          criarLinha('cmd-saida', c.saida[i]);
+          timer = setTimeout(function () { mostrarSaida(i + 1); }, reduzirMovimento ? 0 : 320);
+        } else {
+          var real = criarLinha('cmd-real');
+          var rotulo = document.createElement('b');
+          rotulo.textContent = 'o que faz de verdade: ';
+          real.appendChild(rotulo);
+          real.appendChild(document.createTextNode(c.real));
+          var fim = criarLinha('');
+          var p2 = document.createElement('span');
+          p2.className = 'cmd-prompt';
+          p2.textContent = 'root@abismo:~# ';
+          var cur2 = document.createElement('span');
+          cur2.className = 'cmd-cursor';
+          fim.appendChild(p2);
+          fim.appendChild(cur2);
+          fim.style.marginTop = '10px';
+        }
+      }
+
+      function digitar(i) {
+        if (i <= c.cmd.length) {
+          digitado.textContent = c.cmd.slice(0, i);
+          timer = setTimeout(function () { digitar(i + 1); }, reduzirMovimento ? 0 : 70);
+        } else {
+          cursor.remove();
+          timer = setTimeout(function () { mostrarSaida(0); }, reduzirMovimento ? 0 : 350);
+        }
+      }
+
+      digitar(0);
+    }
+
+    function fechar() {
+      cancelar();
+      overlay.classList.add('oculto');
+    }
+
+    botaoEvocar.addEventListener('click', evocar);
+    document.getElementById('cmdOutro').addEventListener('click', evocar);
+    document.getElementById('cmdFechar').addEventListener('click', fechar);
+
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) fechar();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !overlay.classList.contains('oculto')) fechar();
+    });
+  })();
+</script>
+
+
+</main>
+<script src="script.js"></script>
+</body></html>

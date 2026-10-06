@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Contato</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        :root {
+            --pink: #ff16dc;
+            --pink-light: #fc57c2;
+            --text: #f8e9ee;
+            --muted: #c9a7b3;
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, system-ui, sans-serif;
+            color: var(--text);
+            background: transparent;
+        }
+
+        .c {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+            align-items: center;
+            font-size: 13px;
+        }
+
+        .contact {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+
+            color: var(--text);
+            text-decoration: none;
+
+            padding: 8px 10px;
+            border-radius: 7px;
+
+            transition:
+                color .2s,
+                background .2s,
+                transform .2s,
+                box-shadow .2s;
+        }
+
+        .contact i {
+            font-size: 17px;
+            color: var(--pink);
+            transition: .2s;
+        }
+
+        .contact:hover {
+            color: var(--pink-light);
+            background: rgba(255, 22, 220, 0.08);
+            transform: translateY(-2px);
+            box-shadow: 0 0 12px rgba(255, 22, 220, 0.15);
+        }
+
+        .contact:hover i {
+            color: var(--pink-light);
+            transform: scale(1.12);
+        }
+
+        p {
+            margin-top: 22px;
+            font-size: 12px;
+            color: var(--muted);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="c">
+
+        <div class="contact">
+            <i class="fa-solid fa-phone"></i>
+            <span>(47) 99258-2056</span>
+        </div>
+
+        <a class="contact"
+            href="https://instagram.com/victor_m4th"
+            target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+            <span>@victor_m4th</span>
+        </a>
+
+        <a class="contact"
+            href="mailto:victoralbino666@gmail.com">
+            <i class="fa-solid fa-envelope"></i>
+            <span>victoralbino666@gmail.com</span>
+        </a>
+
+    </div>
+
+    <p>A dopamina dos códigos é o que me move.</p>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

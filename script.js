@@ -1,17 +1,17 @@
 /* Membros da Equipe */
 
 const equipe = [
+
     { nome: "Thiago Ademar Ludvichak", funcao: "Líder do projeto", descricao: "Responsável por coordenar a equipe e manter tudo no caminho certo.", perfil: "Perfis/ThiagoLudvichak/perfil.html", foto: "Perfis/ThiagoLudvichak/foto_perfil_thiago.jpg", cor: "#b52b2b", fundo: "#1c0808" },
 
-    { nome: "Anthony Santa Ana Souza", funcao: "Desenvolvimento", descricao: "Participação no desenvolvimento e construção do site.", perfil: "Perfis/aluno_B/perfilB.html", foto: "Perfis/aluno_B/fotoPerfilB.jpg", cor: "#fcf5f5", fundo: "#beb60c" },
+    { nome: "Anthony Santa Ana Souza", funcao: "Desenvolvimento", descricao: "Participação no desenvolvimento e construção do site.", perfil: "Perfis/AnthonySouza/perfilAnthony.html", foto: "Perfis/AnthonySouza/Imagens_Anthony/Anthony7.jpg", cor: "#fcf5f5", fundo: "#2c2c2c" },
 
-    { nome: "Pedro Elias dos Santos Vincensi", funcao: "Banco de Dados", descricao: "Organização das informações e apoio à estrutura do projeto.", perfil: "Perfis/aluno_C/perfilC.html", foto: "Perfis/aluno_C/fotoPerfilC.jpg", cor: "#47b52b", fundo: "#0bb630" },
-
+    { nome: "Pedro Elias dos Santos Vincensi", funcao: "Tecnico em Metafisica", descricao: "Organização das informações e apoio à estrutura do projeto.", perfil: "Perfis/PedroEliasVincensi/perfilPedro.html", foto: "Perfis/PedroEliasVincensi/foto_perfil.jpg", cor: "#ff0000", fundo: "#620000" },
+    
     { nome: "Lucas Santos de Liz", funcao: "Design", descricao: "Criação e organização da identidade visual.", perfil: "perfis/LucasSantos/perfil.html", foto: "Perfis/LucasSantos/Imagens_LucasSantos/LucasSantos.jpeg", cor: "#5cd8e3", fundo: "#212b3d" },
-
     { nome: "Gabriel da Rosa Dombroski", funcao: "Desenvolvimento", descricao: "Implementação de funcionalidades e componentes.", perfil: "Perfis/GabrielDombroski/perfil.html", foto: "Perfis/GabrielDombroski/Imagens/foto_perfil.jpeg", cor: "#6d28d9", fundo: "#120b20" },
     
-    { nome: "Victor Matheus Albino Freitas", funcao: "Testes", descricao: "Verificação do funcionamento e identificação de melhorias.", perfil: "Perfis/aluno_F/perfilF.html", foto: "Perfis/aluno_F/fotoPerfilF.jpg", cor: "#2bb59e", fundo: "#08cc12" },
+    { nome: "Victor Matheus Albino Freitas", funcao: "Testes", descricao: "Verificação do funcionamento e identificação de melhorias.", perfil: "perfis/VictorFreitas/perfil.html", cor: "#2bb59e", fundo: "#08cc12" },
 
     { nome: "Murilo da Silva Siqueira", funcao: "Documentação", descricao: "Organização da documentação e apresentação do projeto.", perfil: "Perfis/aluno_G/perfilG.html", foto: "Perfis/aluno_G/fotoPerfilG.jpg", cor: "#3711e4", fundo: "#0c9164" },
 
@@ -19,7 +19,7 @@ const equipe = [
 
     { nome: "Guilherme Cardoso Antunes", funcao: "Design", descricao: "Apoio visual, organização e experiência do usuário.", perfil: "Perfis/aluno_I/perfilI.html", foto: "Perfis/aluno_I/fotoPerfilI.jpg", cor: "#47b52b", fundo: "#703cff" },
 
-    { nome: "Arthur Stradioto da Silva", funcao: "Git/GitHub", descricao: "Organização do repositório e colaboração da equipe.", perfil: "Perfis/aluno_J/perfilJ.html", foto: "Perfis/aluno_J/fotoPerfilJ.jpg", cor: "#092441", fundo: "#7c02e0" },
+    { nome: "Arthur Stradioto da Silva", funcao: "Git/GitHub", descricao: "Organização do repositório e colaboração da equipe.", perfil: "Perfis/ArthurStradioto/perfil.html", foto: "Perfis/ArthurStradioto/imagens/foto_arthur.jpeg", cor: "#092441", fundo: "#7c02e0" },
 
     { nome: "Maicon Carlos Cristofolini Junior", funcao: "Testes", descricao: "Revisão final, responsividade e ajustes.", perfil: "Perfis/aluno_K/perfilK.html", foto: "Perfis/aluno_K/fotoPerfilK.jpg", cor: "#972471", fundo: "#1c0808" }
 ]

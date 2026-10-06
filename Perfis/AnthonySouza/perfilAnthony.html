@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anthony Souza | Sistemas de Informação</title>
+  <link rel="shortcut icon" href="imagens_Anthony/Dragon1.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+
+<div id="modalVideo" class="modal-video" onclick="fecharVideo(event)">
+
+  <div class="video-container">
+
+    <button class="fechar" onclick="fecharVideo()">×</button>
+
+    <video id="video" controls>
+      <source src="" type="video/mp4">
+    </video>
+
+  </div>
+
+</div>
+
+<body>
+
+  <div id="modalFoto" class="modal-foto" onclick="fecharFoto(event)">
+    <div class="foto-container">
+
+      <button class="fechar" onclick="fecharFoto()">×</button>
+
+      <img id="fotoModal" src="" alt="Imagem do projeto">
+
+    </div>
+  </div>
+
+  <aside class="side">
+
+    <a class="back" href="../../index.html">
+      ← Voltar
+    </a>
+
+    <div class="logo">
+      <div class="c"></div>
+      <b>Anthony <span>Souza</span></b>
+      <small>Sistemas de Informação</small>
+    </div>
+
+    <nav>
+      <a class="on" href="#inicio">Início</a>
+      <a href="#sobre">Sobre mim</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="social">
+        <a href="https://www.instagram.com/tonyxz._7" target="_blank">
+        <img src="imagens_Anthony/Instagram_image.png" alt="Instagram"></a>
+
+        <a href="https://github.com/anthonyss450" target="_blank">
+        <img src="imagens_Anthony/logo-github.png" alt="GitHub"></a>
+
+        <a href="https://www.linkedin.com/in/anthony-santa-ana-souza/" target="_blank">
+        <img src="imagens_Anthony/logo-linkedin.png" alt="LinkedIn"></a>
+    </div>
+
+  </aside>
+
+  <main>
+
+    <section class="hero emerge-de-baixo" id="inicio">
+      
+      <p class="hi">Olá, eu sou</p>
+
+      <h1>
+        Anthony <span>Souza</span>
+      </h1>
+
+      <h2>Sistemas de Informação</h2>
+
+      <p class="d">
+        Estudante de Sistemas de Informação apaixonado por programação,
+        tecnologia e desenvolvimento. Sempre buscando aprender novas
+        ferramentas, aprimorar minhas habilidades e transformar ideias
+        em projetos.
+      </p>
+
+      <div class="btns">
+
+        <a class="btn" href="#contato">
+          Entrar em contato
+        </a>
+
+      </div>
+
+    </section>
+
+    <section id="sobre" class="emerge-de-baixo">
+
+      <h3>Sobre mim</h3>
+
+      <div class="about">
+        
+
+        <div class="ph"></div>
+
+        <div>
+
+          <p>
+            Olá me chamo Anthony Souza, estudante de Sistemas de Informação na Uniplac.
+            Tenho interesse principalmente por programação, desenvolvimento
+            de sistemas e tecnologia.
+          </p>
+
+          <p>
+            No meu tempo livre, gosto de jogos, livros, músicas e de explorar
+            novas tecnologias. Estou sempre buscando evoluir meus conhecimentos
+            e desenvolver projetos que me ajudem a crescer profissionalmente.
+          </p>
+
+          <div class="tags">
+            <span>Programação</span>
+            <span>Tecnologia</span>
+            <span>Games</span>
+            <span>Livros</span>
+            <span>Música</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section id="habilidades" class="emerge-de-baixo">
+
+      <h3>Habilidades</h3>
+
+    <iframe 
+      src="habilidadesAnthony.html" 
+      title="Habilidades" 
+      height="390" 
+      scrolling="no"
+      loading="lazy"
+    ></iframe>
+
+    </section>
+
+    <section id="projetos" class="emerge-de-baixo">
+
+      <h3>Projetos</h3>
+
+      <div class="projs">
+
+        <a class="proj" href="#" onclick="abrirVideo('imagens_Anthony/The_walls.mp4'); return false;">
+        <div class="banner-musica">
+        <i style="background-image: url(imagens_Anthony/Chase.jpg)"></i>
+        <span class="play-musica">▶</span>
+        </div>
+
+        <div>
+          <b>The Walls — Python</b>
+          Uma reprodução musical desenvolvida em Python e executada diretamente pelo terminal.
+        </div>
+        </a>
+
+        <a class="proj segundo-card" href="#"
+        onclick="abrirFoto('imagens_Anthony/Shadow_garden.png'); return false;">
+
+        <i style="background-image: url(imagens_Anthony/Shadow_garden.png)"></i>
+
+        <div>
+          <b>Shadow Garden</b>
+          Página dedicada à Shadow Garden, apresentando seus fundadores e disponibilizando um botão de acesso ao servidor oficial do Discord.
+        </div>
+
+      </a>
+          <a class="proj" href="#"
+          onclick="abrirFoto('imagens_Anthony/Calc_IMC.png'); return false;">
+
+          <i style="background-image: url(imagens_Anthony/Calc_IMC.png)"></i>
+
+          <div>
+            <b>Calculadora de IMC</b>
+            Aplicação desenvolvida em JavaScript para calcular o Índice de Massa Corporal (IMC) com base no peso e na altura informados pelo usuário.
+          </div>
+        </a>
+
+        <a class="proj" href="#"
+        onclick="abrirFoto('imagens_Anthony/jogo-cobra.jpg'); return false;">
+
+          <i style="background-image: url(imagens_Anthony/jogo-cobra.jpg)"></i>
+
+          <div>
+            <b>Snake Game</b>
+            Jogo clássico desenvolvido em JavaScript, no qual o jogador controla uma cobra que deve coletar maçãs, aumentar seu tamanho e evitar colidir com as paredes ou com o próprio corpo.
+          </div>
+        </a>
+
+      </div>
+
+    </section>
+
+    <section id="contato" class="emerge-de-baixo">
+
+      <h3>Contato</h3>
+
+      <iframe
+        src="contato_Anthony.html"
+        title="Contato"
+        height="67"
+        loading="lazy"
+      ></iframe>
+
+    </section>
+
+  </main>
+  
+  <script src="script.js"></script>
+</body>
+
+</html>

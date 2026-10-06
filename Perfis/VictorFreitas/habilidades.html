@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <title>Habilidades</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" rel="stylesheet" >
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --panel: #211021;
+      --line: #823379;
+      --pink: #ff16dc;
+      --txt: #f8e9ee;
+    }
+
+    body {
+      margin: 0;
+      background: transparent;
+      font-family: Inter, system-ui, sans-serif;
+      color: var(--txt);
+    }
+
+    .g {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      gap: 12px;
+    }
+
+    .s {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 8px;
+      padding: 18px 6px;
+      text-align: center;
+      font-size: 12px;
+
+      transition: .2s;
+    }
+
+    .s:hover {
+      border-color: var(--pink);
+      background: #2a1229;
+      transform: translateY(-2px);
+    }
+
+    .s i {
+      display: block;
+      font-size: 28px;
+      color: var(--pink);
+      margin-bottom: 10px;
+      height: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="g">
+
+    <div class="s">
+      <i class="devicon-csharp-plain"></i>
+      C#
+    </div>
+
+    <div class="s">
+      <i class="devicon-unity-plain"></i>
+      Unity
+    </div>
+
+    <div class="s">
+      <i class="devicon-mysql-original"></i>
+      MySQL
+    </div>
+
+    <div class="s">
+      <i class="devicon-cplusplus-plain"></i>
+      C++
+    </div>
+
+    <div class="s">
+      <i class="devicon-github-original"></i>
+      GitHub
+    </div>
+
+    <div class="s">
+      <i class="fa-solid fa-microchip"></i>
+      Hardware
+    </div>
+
+    <div class="s">
+      <i class="fa-solid fa-headset"></i>
+      Suporte
+    </div>
+
+    <div class="s">
+      <i class="fa-solid fa-robot"></i>
+      I.A.
+    </div>
+
+  </div>
+
+</body>
+
+</html>
