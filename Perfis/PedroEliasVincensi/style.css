@@ -1,0 +1,610 @@
+/* ==========================================================================
+   1. VARIÁVEIS (tema carmesim + preto)
+   ========================================================================== */
+:root {
+  --bg:      #000000;   /* preto puro */
+  --panel:   #190003;   /* painéis / sidebar */
+  --line:    #4e0009;   /* bordas */
+  --accent:  #d00018;   /* vermelho forte (cor principal) */
+  --accent-2:#b60015;   /* hover */
+  --accent-d:#68000c;   /* vermelho escuro (gradiente do banner) */
+  --txt:     #f5f5f5;   /* texto principal */
+  --mut:     #a3a3a3;   /* texto secundário */
+  --body-txt:#d4d4d4;   /* texto de parágrafos */
+  --ph:      #330006;   /* placeholder de imagens */
+}
+
+/* ==========================================================================
+   2. RESET E BASE
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: Inter, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--txt);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+iframe {
+  width: 100%;
+  border: 0;
+  display: block;
+  background: transparent;
+}
+
+h1 {
+  font-size: 46px;
+  margin: 6px 0;
+}
+
+h1 span {
+  color: var(--accent);
+}
+
+h3 {
+  font-size: 20px;
+  padding-bottom: 8px;
+  margin-bottom: 22px;
+  display: inline-block;
+  border-bottom: 2px solid var(--accent);
+}
+
+/* ==========================================================================
+   3. SIDEBAR
+   ========================================================================== */
+.side {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 250px;
+  background: var(--panel);
+  border-right: 1px solid var(--line);
+  padding: 28px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Logo */
+.logo {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.logo .c {
+  width: 84px;
+  height: 84px;
+  margin: 0 auto 12px;
+  border: 3px solid var(--accent);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font: 800 32px/1 Inter, sans-serif;
+  box-shadow: 0 0 18px rgba(251, 0, 0, 0.821)
+}
+
+.logo b {
+  font-size: 18px;
+}
+
+.logo b span {
+  color: var(--accent);
+}
+
+.logo small {
+  display: block;
+  color: var(--mut);
+  margin-top: 6px;
+}
+
+/* Navegação */
+nav a {
+  display: block;
+  padding: 12px 18px;
+  border-radius: 8px;
+  color: var(--mut);
+  font-size: 14px;
+  margin-bottom: 6px;
+  transition: background .2s, color .2s;
+}
+
+nav a:hover,
+nav a.on {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Redes sociais */
+.social {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  color: var(--mut);
+  font-size: 13px;
+}
+
+/* Botão voltar */
+.back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 14px;
+  margin-bottom: 26px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  transition: background .2s, color .2s;
+}
+
+.back:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ==========================================================================
+   4. CONTEÚDO PRINCIPAL
+   ========================================================================== */
+main {
+  margin-left: 250px;
+}
+
+section {
+  padding: 48px 70px;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  min-height: 330px;
+  background:
+    linear-gradient(90deg, var(--bg) 35%, rgba(0, 0, 0, .2)),
+    url(img/banner.jpg) center/cover,
+     linear-gradient(120deg, var(--panel), var(--accent-d));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero p.hi {
+  color: var(--mut);
+}
+
+.hero h2 {
+  font-weight: 400;
+  font-size: 19px;
+  margin-bottom: 14px;
+}
+
+.hero .d {
+  max-width: 360px;
+  color: var(--mut);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Botões */
+.btns {
+  display: flex;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.btn {
+  padding: 11px 22px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  font-size: 13px;
+  transition: border-color .2s, background .2s;
+}
+
+.btn:hover {
+  border-color: var(--accent);
+}
+
+.btn.p {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn.p:hover {
+  background: var(--accent-2);
+  border-color: var(--accent-2);
+}
+
+/* ---------- Sobre ---------- */
+.about {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+.about .ph {
+  width: 245px;
+  height: 245px;
+  border-radius: 8px;
+  background: url(img/foto.jpg) center/cover, var(--ph);
+  flex: none;
+  border: 1px solid var(--line);
+}
+
+.about p {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--body-txt);
+  max-width: 520px;
+  margin-bottom: 14px;
+}
+
+.tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tags span {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 12px;
+  color: var(--mut);
+  transition: border-color .2s, color .2s;
+}
+
+.tags span:hover {
+  border-color: var(--accent);
+  color: var(--accent-2);
+}
+
+/* ---------- Projetos ---------- */
+.projs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.proj {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--panel);
+  transition: border-color .2s, transform .2s;
+}
+
+.proj:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.proj i {
+  display: block;
+  height: 72px;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--ph);
+}
+
+.proj div {
+  padding: 12px;
+  font-size: 12px;
+  color: var(--mut);
+}
+
+.proj b {
+  display: block;
+  color: var(--txt);
+  margin-bottom: 4px;
+}
+
+/* ==========================================================================
+   5. RESPONSIVO
+   ========================================================================== */
+@media (max-width: 900px) {
+  .side {
+    position: static;
+    width: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .logo,
+  .social {
+    display: none;
+  }
+
+  main {
+    margin: 0;
+  }
+
+  section {
+    padding: 32px 20px;
+  }
+
+  .about {
+    flex-direction: column;
+  }
+
+  .projs {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .back {
+    margin-bottom: 0;
+  }
+}
+
+.c {
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.c img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.c::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.glitch {
+    animation: glitch 0.15s infinite;
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+        filter: none;
+    }
+
+    20% {
+        transform: translate(-5px, 3px);
+        filter: hue-rotate(90deg);
+    }
+
+    40% {
+        transform: translate(5px, -3px);
+        filter: contrast(2);
+    }
+
+    60% {
+        transform: translate(-3px, -2px);
+        filter: invert(0.2);
+    }
+
+    80% {
+        transform: translate(3px, 2px);
+        filter: hue-rotate(-90deg);
+    }
+
+    100% {
+        transform: translate(0);
+        filter: none;
+    }
+}
+
+/* =========================
+   COLAPSO DO PLANO MATERIAL
+   ========================= */
+
+body.colapso {
+    animation: colapsoInvert 2.4s forwards;
+    overflow: hidden;
+}
+
+body.colapso main,
+body.colapso .side {
+    animation: realidadeQuebrando 2.4s forwards;
+}
+
+@keyframes colapsoInvert {
+    0% {
+        filter: none;
+    }
+
+    20% {
+        filter: invert(0.15) contrast(1.5);
+    }
+
+    45% {
+        filter: invert(0.7) contrast(2) hue-rotate(90deg);
+    }
+
+    70% {
+        filter: invert(1) contrast(2.5) hue-rotate(180deg);
+    }
+
+    100% {
+        filter: invert(1) contrast(4) brightness(0.5);
+    }
+}
+
+@keyframes realidadeQuebrando {
+    0% {
+        transform: translate(0) scale(1);
+    }
+
+    20% {
+        transform: translate(-5px, 3px) skewX(1deg);
+    }
+
+    35% {
+        transform: translate(7px, -5px) skewX(-2deg) scale(1.01);
+    }
+
+    50% {
+        transform: translate(-12px, 8px) skewX(3deg) scale(0.99);
+    }
+
+    65% {
+        transform: translate(15px, -10px) skewX(-5deg) scale(1.02);
+    }
+
+    80% {
+        transform: translate(-20px, 12px) skewX(7deg) scale(0.96);
+    }
+
+    100% {
+        transform: translate(0) scale(0);
+        opacity: 0;
+        filter: blur(15px);
+    }
+}
+
+/* Imagens estranhas */
+
+.entidade {
+    position: fixed;
+    width: 180px;
+    height: 180px;
+
+    object-fit: contain;
+
+    pointer-events: none;
+
+    z-index: 99999;
+
+    opacity: 0;
+
+    filter:
+        contrast(1.5)
+        brightness(0.8);
+
+    animation:
+        entidadeAparece 0.45s forwards,
+        entidadeGlitch 0.12s infinite;
+}
+
+@keyframes entidadeAparece {
+    0% {
+        opacity: 0;
+        transform: scale(0.1) rotate(-20deg);
+    }
+
+    40% {
+        opacity: 1;
+        transform: scale(1.2) rotate(5deg);
+    }
+
+    100% {
+        opacity: 0.9;
+        transform: scale(1) rotate(0);
+    }
+}
+
+@keyframes entidadeGlitch {
+    0% {
+        clip-path: inset(0 0 0 0);
+    }
+
+    25% {
+        clip-path: inset(10% 0 60% 0);
+        transform: translate(-5px, 3px);
+    }
+
+    50% {
+        clip-path: inset(60% 0 10% 0);
+        transform: translate(6px, -4px);
+    }
+
+    75% {
+        clip-path: inset(30% 0 30% 0);
+        transform: translate(-3px, 2px);
+    }
+
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+/* Linhas de interferência */
+
+.interferencia {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 99998;
+
+    opacity: 0;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            transparent 3px,
+            rgba(255,255,255,.08) 4px
+        );
+
+    animation: interferencia 2.4s forwards;
+}
+
+@keyframes interferencia {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: .1;
+    }
+
+    60% {
+        opacity: .35;
+    }
+
+    100% {
+        opacity: .8;
+    }
+}
+
+/* Tela final */
+
+.colapso-final {
+    position: fixed;
+    inset: 0;
+
+    background: #000;
+
+    z-index: 100000;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    animation: finalColapso .7s 1.8s forwards;
+}
+
+@keyframes finalColapso {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

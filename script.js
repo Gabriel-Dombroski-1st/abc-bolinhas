@@ -5,8 +5,8 @@ const equipe = [
 
     { nome: "Anthony Santa Ana Souza", funcao: "Desenvolvimento", descricao: "Participação no desenvolvimento e construção do site.", perfil: "Perfis/AnthonySouza/perfilAnthony.html", foto: "Perfis/AnthonySouza/Imagens_Anthony/Anthony7.jpg", cor: "#fcf5f5", fundo: "#2c2c2c" },
 
-    { nome: "Pedro Elias dos Santos Vincensi", funcao: "Banco de Dados", descricao: "Organização das informações e apoio à estrutura do projeto.", perfil: "Perfis/aluno_C/perfilC.html", foto: "Perfis/aluno_C/fotoPerfilC.jpg", cor: "#47b52b", fundo: "#0bb630" },
-
+    { nome: "Pedro Elias dos Santos Vincensi", funcao: "Tecnico em Metafisica", descricao: "Organização das informações e apoio à estrutura do projeto.", perfil: "Perfis/PedroEliasVincensi/perfilPedro.html", foto: "Perfis/PedroEliasVincensi/foto_perfil.jpg", cor: "#ff0000", fundo: "#620000" },
+    
     { nome: "Lucas Santos de Liz", funcao: "Design", descricao: "Criação e organização da identidade visual.", perfil: "perfis/aluno_D/perfilD.html", foto: "Perfis/aluno_D/fotoPerfilD.jpg", cor: "#d8139d", fundo: "#0d2ce0" },
 
     { nome: "Gabriel da Rosa Dombroski", funcao: "Desenvolvimento", descricao: "Implementação de funcionalidades e componentes.", perfil: "Perfis/GabrielDombroski/perfil.html", foto: "Perfis/GabrielDombroski/Imagens/foto_perfil.jpeg", cor: "#6d28d9", fundo: "#120b20" },
