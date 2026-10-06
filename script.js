@@ -11,9 +11,9 @@ const equipe = [
     { nome: "Lucas Santos de Liz", funcao: "Design", descricao: "Criação e organização da identidade visual.", perfil: "perfis/LucasSantos/perfil.html", foto: "Perfis/LucasSantos/Imagens_LucasSantos/LucasSantos.jpeg", cor: "#5cd8e3", fundo: "#212b3d" },
     { nome: "Gabriel da Rosa Dombroski", funcao: "Desenvolvimento", descricao: "Implementação de funcionalidades e componentes.", perfil: "Perfis/GabrielDombroski/perfil.html", foto: "Perfis/GabrielDombroski/Imagens/foto_perfil.jpeg", cor: "#6d28d9", fundo: "#120b20" },
     
-    { nome: "Victor Matheus Albino Freitas", funcao: "Testes", descricao: "Verificação do funcionamento e identificação de melhorias.", perfil: "perfis/VictorFreitas/perfil.html", cor: "#2bb59e", fundo: "#08cc12" },
+    { nome: "Victor Matheus Albino Freitas", funcao: "Testes", descricao: "Verificação do funcionamento e identificação de melhorias.", perfil: "perfis/VictorFreitas/perfil.html", foto: "Perfis/VictorFreitas/Imagens/", cor: "#ff16dc", fundo: "#211021" },
 
-    { nome: "Murilo da Silva Siqueira", funcao: "Documentação", descricao: "Organização da documentação e apresentação do projeto.", perfil: "Perfis/aluno_G/perfilG.html", foto: "Perfis/aluno_G/fotoPerfilG.jpg", cor: "#3711e4", fundo: "#0c9164" },
+    { nome: "Murilo da Silva Siqueira", funcao: "Documentação", descricao: "Organização da documentação e apresentação do projeto.", perfil: "Perfis/MuriloSiqueira/perfilA.html", foto: "Perfis/MuriloSiqueira/foto_perfil.jpg", cor: "#1caf1c", fundo: "#1a2a47" },
 
     { nome: "Tamiris de Fátima Pereira Marafigo", funcao: "Desenvolvimento", descricao: "Construção das seções e integração do conteúdo.", perfil: "Perfis/aluno_H/perfilH.html", foto: "Perfis/aluno_H/fotoPerfilH.jpg", cor: "#d81587", fundo: "#74b629" },
 
