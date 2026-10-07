@@ -4,7 +4,7 @@ const equipe = [
 
     { nome: "Thiago Ademar Ludvichak", funcao: "Líder do projeto", descricao: "Responsável por coordenar a equipe e manter tudo no caminho certo.", perfil: "Perfis/ThiagoLudvichak/perfil.html", foto: "Perfis/ThiagoLudvichak/foto_perfil_thiago.jpg", cor: "#b52b2b", fundo: "#1c0808" },
 
-    { nome: "Anthony Santa Ana Souza", funcao: "Desenvolvimento", descricao: "Participação no desenvolvimento e construção do site.", perfil: "Perfis/AnthonySouza/perfilAnthony.html", foto: "Perfis/AnthonySouza/Imagens_Anthony/Anthony7.jpg", cor: "#fcf5f5", fundo: "#2c2c2c" },
+    { nome: "Anthony Santa Ana Souza", funcao: "Desenvolvimento", descricao: "Participação no desenvolvimento e construção do site.", perfil: "Perfis/AnthonySouza/perfilAnthony.html", foto: "Perfis/AnthonySouza/imagens_Anthony/Anthony7.jpg", cor: "#fcf5f5", fundo: "#2c2c2c" },
 
     { nome: "Pedro Elias dos Santos Vincensi", funcao: "Tecnico em Metafisica", descricao: "Organização das informações e apoio à estrutura do projeto.", perfil: "Perfis/PedroEliasVincensi/perfilPedro.html", foto: "Perfis/PedroEliasVincensi/foto_perfil.jpg", cor: "#ff0000", fundo: "#620000" },
     
